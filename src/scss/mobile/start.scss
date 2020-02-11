@@ -1,0 +1,35 @@
+section#start{
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+
+  background-image: url('/images/mobile/start.svg');
+  background-size: 100% auto;
+  background-position: top;
+}
+
+#maze-container{
+  display: none;
+}
+
+#phone-container{
+  width: 100vw;
+  height: calc(var(--vh) * 100);
+  left: 0; top: 0;
+
+  position: fixed;
+
+  mask-image: url('/images/mobile/masks/phone_illustration.svg');
+  mask-size: auto 78.84615%;
+  mask-position: center;
+  mask-repeat: none;
+
+  background-image: url('/images/mobile/gradient.svg');
+  background-size: calc( 8 * 100vw ) 100%;
+  background-position: left top;
+
+  will-change: transform;
+
+  transition: opacity 0.5s;
+  opacity: 0;
+  z-index: -1;
+}

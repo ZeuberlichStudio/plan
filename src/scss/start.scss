@@ -1,0 +1,19 @@
+section#start{
+  width: get-vh(1920px);
+  height: 100vh;
+
+  position: relative;
+}
+
+#maze-container{
+  width: 100%;
+  height: 100%;
+  left: 0; top: 0;
+
+  position: absolute;
+  z-index: -1;
+}
+
+#phone-container{
+  display: none;
+}

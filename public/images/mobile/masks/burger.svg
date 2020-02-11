@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+  <g id="Menu_Burger" data-name="Menu Burger" transform="translate(-5351 -4354)">
+    <g id="Rectangle_75" data-name="Rectangle 75" transform="translate(5351 4354)" fill="#fff" stroke="#707070" stroke-width="1" opacity="0">
+      <rect width="28" height="28" stroke="none"/>
+      <rect x="0.5" y="0.5" width="27" height="27" fill="none"/>
+    </g>
+    <line id="Line_170" data-name="Line 170" x2="26" transform="translate(5352 4360)" fill="none" stroke="#b722ff" stroke-linecap="round" stroke-width="2"/>
+    <line id="Line_171" data-name="Line 171" x2="26" transform="translate(5352 4367.831)" fill="none" stroke="#b722ff" stroke-linecap="round" stroke-width="2"/>
+    <line id="Line_172" data-name="Line 172" x2="26" transform="translate(5352 4376)" fill="none" stroke="#b722ff" stroke-linecap="round" stroke-width="2"/>
+  </g>
+</svg>

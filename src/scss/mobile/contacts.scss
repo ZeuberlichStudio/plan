@@ -1,0 +1,111 @@
+section#contacts{
+  width: 100vw;
+  height: calc( var(--vh) * 100 );
+  padding-top: get-vh-m(60px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .plan{
+    width: get-vh-m(154px);
+    height: get-vh-m(95.97px);
+
+    background-image: url('/images/mobile/plan.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .social{
+    margin-top: get-vh-m(48px);
+
+    display: grid;
+    grid-auto-flow: column;
+    grid-template:
+    get-vh-m(51px) /
+    get-vh-m(53.5px) get-vh-m(50px)
+    get-vh-m(50px) get-vh-m(51.3px);
+    grid-column-gap: get-vh-m(35px);
+
+    & :nth-child(n-4){
+      display: block;
+      background-size: 100% auto;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+    }
+
+    & :nth-child(1){
+      background-image: url('/images/mobile/wa.svg');
+    }
+    & :nth-child(2){
+      background-image: url('/images/mobile/mail.svg');
+    }
+    & :nth-child(3){
+      background-image: url('/images/mobile/inst.svg');
+    }
+    & :nth-child(4){
+      background-image: url('/images/mobile/fb.svg');
+    }
+  }
+
+  h2{
+    width: get-vh-m(327px);
+    margin-top: get-vh-m(74px);
+
+    opacity: 0.6;
+    color: #FF3D00;
+  }
+
+  ul{
+    width: get-vh-m(327px);
+    margin-top: get-vh-m(40px);
+    padding-right: get-vh-m(100px);
+    align-self: center;
+
+    display: grid;
+    grid-auto-flow: row;
+    grid-row-gap: get-vh-m(12px);
+
+    color: #FF3D00;
+
+    .label{
+      opacity: 0.7;
+    }
+
+    li{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .phone-buttons{
+    margin-top: get-vh-m(25px);
+
+    display: grid;
+    grid-auto-flow: column;
+    grid-template:
+    get-vh-m(33px) /
+    repeat(2, get-vh-m(147px));
+    grid-column-gap: get-vh-m(20px);
+
+    & :nth-child(n-2){
+      display: block;
+      background-size: auto 99%;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+    }
+
+    & :nth-child(1){
+      background-image: url('/images/mobile/call.svg');
+    }
+    & :nth-child(2){
+      background-image: url('/images/mobile/map.svg');
+    }
+  }
+
+  .form-container,
+  .map{
+    display: none;
+  }
+}

@@ -1,0 +1,41 @@
+section#about{
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+  padding: get-vh-m(54px) get-vh-m(18px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  background-image: url('/images/mobile/about.svg');
+  background-size: auto 100%;
+  background-position: bottom;
+}
+
+.about--header{
+  margin-left: get-vh-m(8px);
+
+  color: #F74695;
+}
+
+.about--p-1{
+  margin-top: get-vh-m(18px);
+
+  letter-spacing: -0.05vh;
+  color: rgba(255,255,255, 0.85);
+
+  span{
+    display: none;
+  }
+}
+
+.about--p-2{
+  margin-top: get-vh-m(28px);
+
+  letter-spacing: -0.05vh;
+  color: $main-white;
+}
+
+#macbook-wrapper{
+  display: none;
+}

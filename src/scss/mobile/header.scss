@@ -1,0 +1,217 @@
+header .description-wrapper,
+header .social{
+  display: none;
+}
+
+header{
+  width: 100vw;
+  height: get-vh-m(52px);
+  top: 0; left: 0;
+
+  padding: 0 get-vh-m(12px);
+
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+
+  z-index: 2;
+}
+
+
+/*gradient*/
+
+.logo,
+.hamburger-button,
+.nav-item a::after,
+.nav-item::before,
+.burger-active .nav-item{
+  will-change: background-position;
+  transform: translateZ(0);
+}
+
+.logo{
+  background: url('/images/mobile/gradient.svg');
+  background-size: calc(5 * 100vw + var(--vh) * 173.07692) auto;
+  background-position: left calc(var(--vh) * -1.846 - var(--scroll_depth_px) ) top;
+}
+
+.hamburger-button,
+.nav-item a::after,
+.nav-item::before{
+  background: url('/images/mobile/gradient.svg');
+  background-size: calc(5 * 100vw + var(--vh) * 173.07692) auto;
+  background-position: right calc((-4 * 100vw - var(--vh) * 178.07692) + var(--scroll_depth_px) ) top;
+}
+
+.burger-active .nav-item{
+  background: url('/images/mobile/gradient.svg');
+  background-size: calc(5 * 100vw + var(--vh) * 173.07692) auto;
+  background-position: right calc((-4 * 100vw - var(--vh) * 178.07692) + var(--scroll_depth_px) ) top;
+}
+
+
+
+/*layout*/
+
+header .logo{
+  width: get-vh-m(65px)!important;
+  height: auto;
+
+  margin-top: get-vh-m(8px);
+
+  mask: url('/images/logo.svg');
+  mask-size: 100% auto;
+  mask-position: center;
+}
+
+/*navigation -- hamburger*/
+
+nav{
+  display: grid;
+
+  grid-auto-flow: row;
+  grid-template-rows: get-vh-m(52px) auto;
+  align-items: center;
+  justify-items: flex-end;
+
+  color: transparent;
+}
+
+.hamburger-button{
+  width: get-vh-m(28px);
+  height: get-vh-m(20px);
+
+  display: block;
+
+  mask: url('/images/mobile/masks/burger.svg');
+  mask-size: 100%;
+  mask-position: center;
+}
+
+nav.burger-active .hamburger-button{
+  mask: url('/images/mobile/masks/burger_back.svg');
+  mask-size: 100%;
+  mask-position: center;
+}
+
+header .nav-links{
+  flex-shrink: 0;
+  width: auto;
+  height: get-vh-m(148px);
+  top: 100%;
+
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: repeat(4, get-vh-m(28px));
+  grid-row-gap: get-vh-m(12px);
+  justify-items: flex-end;
+}
+
+.nav-item{
+  max-width: get-vh-m(28px);
+  padding: 0;
+  width: max-content;
+  height: 100%;
+
+  position: relative;
+
+  border-radius: get-vh-m(14px);
+
+  font-family: 'Comfortaa';
+  font-weight: 300;
+  font-size: get-vh-m(20px);
+  line-height: get-vh-m(28px);
+
+  overflow: hidden;
+  backdrop-filter: blur(2px);
+  transition: 0.3s;
+}
+
+.burger-active .nav-item{
+  max-width: 100%;
+  padding-left: get-vh-m(12px);
+  padding-right: get-vh-m(6.75px + 28px);
+
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.nav-item a::after{
+  width: get-vh-m(28px);
+  height: get-vh-m(28px);
+  top: get-vh-m(0px); right: get-vh-m(0px);
+
+  position: absolute;
+
+  content: '';
+
+  mask-size: 100%!important;
+  mask-position: center!important;
+  mask-repeat: no-repeat!important;
+  border-radius: 50%;
+
+  /*icons*/
+}
+
+/*navigation -- list icons*/
+
+.nav-item:nth-child(1) a::after{
+  mask: url('/images/mobile/masks/about_icon.svg');
+}
+
+.nav-item:nth-child(2) a::after{
+  mask: url('/images/mobile/masks/service_icon.svg');
+}
+
+.nav-item:nth-child(3) a::after{
+  mask: url('/images/mobile/masks/cases_icon.svg');
+}
+
+.nav-item:nth-child(4) a::after{
+  mask: url('/images/mobile/masks/contacts_icon.svg');
+}
+
+/*navigation border*/
+
+.nav-item::before{
+  width: get-vh-m(28px);
+  height: 100%;
+  right: 0; top: 0;
+
+  position: absolute;
+
+  transition: 0.2s;
+  content: '';
+}
+
+.burger-active .nav-item::before{
+  width: 100%;
+}
+
+.nav-item:nth-child(1)::before{
+  mask: url('/images/mobile/masks/about_border.svg');
+  mask-size: auto get-vh-m(28px);
+  mask-position: left center;
+  mask-repeat: no-repeat;
+}
+
+.nav-item:nth-child(2)::before{
+  mask: url('/images/mobile/masks/service_border.svg');
+  mask-size: auto get-vh-m(28px);
+  mask-position: left center;
+  mask-repeat: no-repeat;
+}
+
+.nav-item:nth-child(3)::before{
+  mask: url('/images/mobile/masks/cases_border.svg');
+  mask-size: auto get-vh-m(28px);
+  mask-position: left center;
+  mask-repeat: no-repeat;
+}
+
+.nav-item:nth-child(4)::before{
+  mask: url('/images/mobile/masks/contacts_border.svg');
+  mask-size: auto get-vh-m(28px);
+  mask-position: left center;
+  mask-repeat: no-repeat;
+}

@@ -1,0 +1,96 @@
+@import './scss/fonts.scss';
+@import './scss/variables.scss';
+@import './scss/functions.scss';
+@import './scss/typography.scss';
+
+*{
+  box-sizing: border-box;
+  background-repeat: no-repeat!important;
+  mask-repeat: no-repeat!important;
+  outline: none;
+}
+
+@media screen and (min-width: 1025px){
+
+  #partners{
+    width: 200%;
+    height: get-vh(20px);
+    bottom: 0; left: 0;
+    position: fixed;
+    will-change: left;
+    transform: translateZ(0);
+
+    background: white;
+  }
+
+  #partners{}
+
+  @import './scss/animation.scss';
+  @import './scss/start.scss';
+  @import './scss/about.scss';
+  @import './scss/header.scss';
+  @import './scss/service.scss';
+  @import './scss/cases.scss';
+  @import './scss/contacts.scss';
+  @import './scss/lightbox.scss';
+  @import './scss/form.scss';
+}
+
+@media screen and (max-width: 1024px){
+
+  #partners{display: none;}
+
+  @import './scss/mobile/animation.scss';
+  @import './scss/mobile/header.scss';
+  @import './scss/mobile/start.scss';
+  @import './scss/mobile/about.scss';
+  @import './scss/mobile/service.scss';
+  @import './scss/mobile/cases.scss';
+  @import './scss/mobile/contacts';
+  @import './scss/mobile/lightbox.scss';
+}
+
+html{
+  overflow: hidden;
+}
+
+html{
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+  background-color: rgb(19,19,21);
+}
+
+body{
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+  margin: 0;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+p, h1, h2, li, ul, span{
+  margin: 0;
+  padding: 0;
+  hyphens: auto;
+}
+
+ul{
+  list-style: none;
+}
+
+p{
+  hyphens: auto;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+main{
+  width: max-content;
+  height: calc(var(--vh, 1vh) * 100);
+
+  display: flex;
+}

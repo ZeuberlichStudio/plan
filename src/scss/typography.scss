@@ -1,0 +1,138 @@
+/*basic typograpy pc*/
+
+.dark{
+  color: #666668;
+}
+
+.white{
+  color: #D1D1D1;
+}
+
+::placeholder{
+  color: #666668;
+}
+
+@media screen and (min-width: 768px){
+  .comfortaa-100{
+    font-family: 'Comfortaa';
+    font-weight: bold;
+    font-size: get-vh(100px);
+    line-height: get-vh(100px);
+  }
+
+  .comfortaa-75{
+    font-family: 'Comfortaa';
+    font-weight: bold;
+    font-size: get-vh(75px);
+    line-height: get-vh(85px);
+  }
+
+  .comfortaa-35{
+    font-family: 'Comfortaa';
+    font-weight: bold;
+    font-size: get-vh(35px);
+    line-height: get-vh(39px);
+  }
+
+  .comfortaa-31{
+    font-family: 'Comfortaa';
+    font-weight: normal;
+    font-size: get-vh(31px);
+    line-height: get-vh(34px);
+  }
+
+  .comfortaa-20{
+    font-family: 'Comfortaa';
+    font-weight: bold;
+    font-size: get-vh(20px);
+    line-height: get-vh(23px);
+  }
+
+  .proxima-20{
+    font-family: 'Proxima Nova';
+    font-weight: normal;
+    font-size: get-vh(20px);
+    line-height: get-vh(25px);
+  }
+
+  .proxima-16{
+    font-family: 'Proxima Nova';
+    font-weight: normal;
+    font-size: get-vh(16px);
+    line-height: get-vh(20px);
+  }
+
+  .proxima-16-it{
+    font-family: 'Proxima Nova';
+    font-weight: normal;
+    font-style: italic;
+    font-size: get-vh(16px);
+    line-height: get-vh(20px);
+  }
+}
+/*basic typograpy mobile*/
+
+@media screen and (max-width: 767px){
+
+  .m-comfortaa-30{
+    font-family: 'Comfortaa';
+    font-weight: 300;
+    font-size: get-vh-m(30px);
+    line-height: get-vh-m(33px);
+  }
+
+  .m-comfortaa-25{
+    font-family: 'Comfortaa';
+    font-weight: bold;
+    font-size: get-vh-m(25px);
+    line-height: get-vh-m(28px);
+  }
+
+  .m-comfortaa-14{
+    font-family: 'Comfortaa';
+    font-weight: bold;
+    font-size: get-vh-m(14px);
+    line-height: get-vh-m(15px);
+  }
+
+  .m-proxima-14{
+    font-family: 'Proxima Nova';
+    font-weight: 500;
+    font-size: get-vh-m(14px);
+    line-height: get-vh-m(16px);
+  }
+
+  .m-proxima-14-it{
+    font-family: 'Proxima Nova';
+    font-weight: 500;
+    font-style: italic;
+    font-size: get-vh-m(14px);
+    line-height: get-vh-m(14px);
+  }
+
+  .m-proxima-12{
+    font-family: 'Proxima Nova';
+    font-weight: 500;
+    font-size: get-vh-m(12px);
+    line-height: get-vh-m(14px);
+  }
+}
+
+/*header*/
+
+header{
+  span{
+    font-family: 'Proxima Nova';
+    font-weight: normal;
+    font-size: get-vh(20px);
+    line-height: get-vh(18px);
+    color: rgba(255,255,255, 1);
+  }
+
+  nav{
+    font-family: 'Proxima Nova';
+    font-weight: 500;
+    font-size: get-vh(20px);
+    line-height: get-vh(20px);
+  }
+}

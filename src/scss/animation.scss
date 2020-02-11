@@ -1,0 +1,55 @@
+main{
+  position: relative;
+}
+
+svg{
+  width: auto!important;
+}
+
+#start-animation-wrapper{
+  width: get-vh(1920px);
+  height: 100vh;
+  left: 0; top: 0;
+
+  position: absolute;
+
+  z-index: -1;
+
+  #start-animation-container{
+    width: 100vw;
+    height: get-vh(1080px);
+  }
+}
+
+#mid-animation-wrapper{
+  width: get-vh(4.5 * 1920px);
+  height: 100vh;
+  left: get-vh(1920px); top: 0;
+
+  position: absolute;
+
+  z-index: -1;
+
+  #mid-animation-container{
+    width: 100vw;
+    height: get-vh(1080px);
+    left: 0; top: 0;
+
+    position: sticky;
+  }
+}
+
+#end-animation-wrapper{
+  width: 100vw;
+  height: 100vh;
+  right: 0; top: 0;
+
+  position: absolute;
+
+  overflow: hidden;
+
+  #end-animation-container{
+    width: 100vw;
+    height: get-vh(1080px);
+  }
+}

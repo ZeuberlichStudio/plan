@@ -1,0 +1,41 @@
+main{
+  position: relative;
+}
+
+svg{
+  width: auto!important;
+}
+
+#m-start-animation-wrapper{
+  width: 100vw;
+  height: calc(var(--vh) * 100);
+  left: 0; top: 0;
+
+  position: absolute;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  #m-start-animation-container{
+    width: auto;
+    height: calc(var(--vh) * 100);
+  }
+}
+
+#m-mid-animation-wrapper{
+  width: 100vw;
+  height: calc(var(--vh) * 100);
+  left: 100vw; top: 0;
+
+  position: absolute;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  #m-mid-animation-container{
+    width: auto;
+    height: calc(var(--vh) * 100);
+  }
+}

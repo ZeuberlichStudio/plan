@@ -1,0 +1,129 @@
+header{
+  max-width: get-vh(940.5px);
+  height: get-vh(70px);
+  top: 0;
+  left: 0;
+
+  position: fixed;
+  box-sizing: content-box;
+  display: grid;
+  align-items: center;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(4, max-content);
+  grid-column-gap: get-vh(16px);
+
+  padding-top: get-vh(5px);
+  padding-left: get-vh(16px);
+
+  z-index: 1;
+}
+
+
+/*layout*/
+
+.logo{
+  width: get-vh(120px);
+  height: get-vh(68px);
+
+  display: block;
+
+  background-image: url('/images/gradient.svg');
+  background-size: get-vh(8.5 * 1920px) auto;
+  background-position: left calc( -1.85185vh - var(--scroll_depth_px)) top;
+
+  mask-image: url('/images/logo.svg');
+  mask-size: contain;
+  mask-position: center;
+}
+
+.description-wrapper{
+  width: get-vh(285px);
+  height: get-vh(42px);
+
+  position: relative;
+  overflow: hidden;
+}
+
+.description{
+  width: get-vh(285px);
+  height: get-vh(42px);
+  padding-top: get-vh(1px);
+  left: 0; top: 0; bottom: 0;
+  margin: auto;
+
+  position: absolute;
+  display: inline-block;
+}
+
+nav{
+  position: relative;
+}
+
+nav::before{
+  width: get-vh(2px);
+  height: get-vh(38px);
+
+  content: '';
+  position: absolute;
+  display: block;
+
+  left: 0;
+  top: 0; bottom: 0;
+  margin: auto;
+
+  border-radius: get-vh(5px);
+  background-color: rgba(255,255,255, 0.5);
+}
+
+.hamburger-button{
+  display: none;
+}
+
+.nav-links{
+  width: get-vh(396px);
+  height: min-content;
+
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+
+  list-style: none;
+  padding-left: get-vh(24px);
+}
+
+.nav-item{
+  font-family: 'Comfortaa';
+  font-weight: bold;
+  font-size: get-vh(21px);
+  line-height: get-vh(21px);
+  color: rgba(255,255,255, 0.5);
+}
+
+.social{
+  margin-left: get-vh(0px);
+
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: get-vh(16px);
+}
+
+.social-item{
+  width: get-vh(24px);
+  height: get-vh(24px);
+
+  background: rgba(255,255,255, 0.5);
+}
+
+.social-item:nth-child(1){
+  mask-image: url('/images/inst_icon.svg');
+  mask-size: 100%;
+  mask-position: center;
+  mask-repeat: no-repeat;
+}
+
+.social-item:nth-child(2){
+  mask-image: url('/images/fb_icon.svg');
+  mask-size: 100%;
+  mask-position: center;
+  mask-repeat: no-repeat;
+}

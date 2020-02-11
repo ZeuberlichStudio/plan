@@ -1,0 +1,13 @@
+$vh-viewport: 1080;
+@function get-vh($size){
+  $vh-context: $vh-viewport * 0.01 * 1px;
+  @return $size / $vh-context * 1vh;
+  @return $size;
+}
+
+$vh-viewport-m: 650;
+@function get-vh-m($size){
+  $vh-context: $vh-viewport-m * 0.01 * 1px;
+  @return calc(var(--vh) * #{$size / $vh-context});
+  @return $size;
+}
