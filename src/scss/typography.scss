@@ -13,6 +13,7 @@
 }
 
 @media screen and (min-width: 768px){
+
   .comfortaa-100{
     font-family: 'Comfortaa';
     font-weight: bold;
@@ -39,6 +40,13 @@
     font-weight: normal;
     font-size: get-vh(31px);
     line-height: get-vh(34px);
+  }
+
+  .proxima-23{
+    font-family: 'Proxima Nova';
+    font-weight: normal;
+    font-size: get-vh(23px);
+    line-height: get-vh(35px);
   }
 
   .comfortaa-20{
@@ -69,6 +77,43 @@
     font-size: get-vh(16px);
     line-height: get-vh(20px);
   }
+
+  /*vw sizes*/
+
+  .vw-comfortaa-35{
+    font-family: 'Comfortaa';
+    font-weight: bold;
+    font-size: get-vw(35px);
+    line-height: get-vw(39px);
+  }
+
+  .vw-comfortaa-31{
+    font-family: 'Comfortaa';
+    font-weight: normal;
+    font-size: get-vw(31px);
+    line-height: get-vw(34px);
+  }
+
+  .vw-comfortaa-20{
+    font-family: 'Comfortaa';
+    font-weight: bold;
+    font-size: get-vw(20px);
+    line-height: get-vw(23px);
+  }
+
+  .vw-proxima-20{
+    font-family: 'Proxima Nova';
+    font-weight: normal;
+    font-size: get-vw(20px);
+    line-height: get-vw(25px);
+  }
+
+  .vw-proxima-16{
+    font-family: 'Proxima Nova';
+    font-weight: normal;
+    font-size: get-vw(16px);
+    line-height: get-vw(20px);
+  }
 }
 /*basic typograpy mobile*/
 
@@ -88,11 +133,25 @@
     line-height: get-vh-m(28px);
   }
 
+  .m-comfortaa-18{
+    font-family: 'Comfortaa';
+    font-weight: bold;
+    font-size: get-vh-m(18px);
+    line-height: get-vh-m(18px);
+  }
+
   .m-comfortaa-14{
     font-family: 'Comfortaa';
     font-weight: bold;
     font-size: get-vh-m(14px);
     line-height: get-vh-m(15px);
+  }
+
+  .m-comfortaa-12{
+    font-family: 'Comfortaa';
+    font-weight: bold;
+    font-size: get-vh-m(12px);
+    line-height: get-vh-m(12px);
   }
 
   .m-proxima-14{

@@ -39,15 +39,15 @@ section#service{
 
 .service--text-1
 h2{
-  color: #E99B5E;
+  color: #FF5873;
 }
 .service--text-2
 h2{
-  color: #E99B5E;
+  color: #FF925A;
 }
 .service--text-3
 h2{
-  color: #E99B5E;
+  color: #FFCA36;
 }
 
 .service--text-1 h2,
@@ -105,6 +105,8 @@ h2{
 }
 
 .controls-container h2{
+  width: max-content;
+
   font-family: 'Comfortaa';
   font-weight: bold;
   font-size: get-vh-m(15px);
@@ -114,7 +116,7 @@ h2{
 
 .controls-container h2.selected{
   font-size: get-vh-m(15px);
-  color: rgb(233, 155, 94);
+  color: #EB606B;
 }
 
 /*notice*/
@@ -148,7 +150,7 @@ span.notice{
   left: get-vh-m(-1.5px);
   width: get-vh-m(22px);
   height: get-vh-m(22px);
-  background-color: #E78F62;
+  background-color: #EB606B;
   border-radius: 50%;
   transition: 0.3s;
 }

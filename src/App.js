@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, withRouter } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import './App.scss';
 
 import MStartAnimation from './components/m_start_animation.component';
@@ -14,12 +14,13 @@ import About from './components/about.component';
 import Service from './components/service.component';
 import Cases from './components/cases.component';
 import Contacts from './components/contacts.component';
-import Lightbox from './components/lightbox.component';
+import Modal from './components/modal.component';
+import Partners from './components/partners.component';
 
 class App extends Component {
 
   componentDidMount(){
-    let clientWidth, scrollWidth;
+    let clientWidth;
 
     window.addEventListener('resize', () => {
       /*render animation?*/
@@ -29,22 +30,9 @@ class App extends Component {
       /*set vh*/
       let vh = document.documentElement.clientHeight * 0.01;
       document.documentElement.style.setProperty('--vh', `${vh}px`);
-      /*bottom bar*/
-      //scrollWidth = document.body.scrollWidth;
     });
 
     window.dispatchEvent( new Event('resize') );
-
-    /*let bar = document.getElementById('partners');
-
-    window.addEventListener('scroll', () => {
-      let scrolled = document.body.scrollLeft;
-
-      bar.stye.left = -(bar.offsetWidth - clientWidth) * (scrolled/(scrollWidth - clientWidth)) + 'px';
-    }, {
-      capture: true,
-      passive: true
-    });*/
   }
 
   state = {
@@ -52,20 +40,28 @@ class App extends Component {
   }
 
   scrollHorizontally = e => {
-    if( Math.abs(e.wheelDeltaX) < 0 ){
+    if( Math.abs(e.wheelDeltaX) === 0 ){
+      document.body.style.overflowX = 'hidden';
       e = window.event || e;
       var delta = Math.max(-1, Math.min(1, e.wheelDeltaY));
-      document.body.scrollLeft -= (delta*100); // Multiplied by 40
+      document.body.scrollLeft -= (delta*150); // Multiplied by 40
       e.preventDefault();
+    }else{
+      e = window.event || e;
+      var delta = Math.max(-1, Math.min(1, e.wheelDeltaX));
+      document.body.scrollLeft -= (delta); // Multiplied by 40
+      e.preventDefault();
+      document.body.style.overflowX = 'scroll';
     }
   }
 
   render() {
 
     if( this.props.location.pathname === '/' ){
-      window.addEventListener('mousewheel', this.scrollHorizontally, {passive: true});
+      window.addEventListener('mousewheel', this.scrollHorizontally,
+      {capture: true, passive: true});
     }else{
-      window. removeEventListener('mousewheel', this.scrollHorizontally, {passive: true})
+      window.removeEventListener('mousewheel', this.scrollHorizontally, {capture: true, passive: true})
     }
 
     return(
@@ -80,9 +76,9 @@ class App extends Component {
             <Service />
             <Cases />
             <Contacts history={ this.props.history }/>
-            <Route path="/posts" render={ () => <Lightbox/> } />
-            <div id="partners"></div>
+            <Route path="/posts" render={ props => <Modal {...props}/> } />
         </main>
+        <Partners/>
       </div>
     );
   }

@@ -1,0 +1,41 @@
+@mixin vw-comfortaa-60{
+  font-family: 'Comfortaa';
+  font-weight: bold;
+  font-size: get-vw(60px);
+  line-height: get-vw(60px);
+}
+
+@mixin vw-comfortaa-35{
+  font-family: 'Comfortaa';
+  font-weight: bold;
+  font-size: get-vw(35px);
+  line-height: get-vw(39px);
+}
+
+@mixin vw-comfortaa-31{
+  font-family: 'Comfortaa';
+  font-weight: normal;
+  font-size: get-vw(31px);
+  line-height: get-vw(34px);
+}
+
+@mixin vw-comfortaa-20{
+  font-family: 'Comfortaa';
+  font-weight: bold;
+  font-size: get-vw(20px);
+  line-height: get-vw(23px);
+}
+
+@mixin vw-proxima-20{
+  font-family: 'Proxima Nova';
+  font-weight: normal;
+  font-size: get-vw(20px);
+  line-height: get-vw(25px);
+}
+
+@mixin vw-proxima-16{
+  font-family: 'Proxima Nova';
+  font-weight: normal;
+  font-size: get-vw(16px);
+  line-height: get-vw(20px);
+}

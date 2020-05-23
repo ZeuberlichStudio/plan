@@ -11,6 +11,16 @@ section#cases{
 
 .cases--description{
   padding-left: get-vh(12px);
+
+  p{
+    margin-top: get-vh(20px);
+    letter-spacing: get-vh(-1px);
+
+    span{
+      letter-spacing: get-vh(0px);
+      color: #FFAC00;
+    }
+  }
 }
 
 
@@ -88,7 +98,7 @@ section#cases{
   flex-grow: 1;
   height: 100%;
 
-  padding: get-vh(288px) 0  0 get-vh(160px);
+  padding: get-vh(368px) 0  0 get-vh(160px);
 
   display: grid;
   grid-auto-flow: column;

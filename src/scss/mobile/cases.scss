@@ -13,19 +13,26 @@ section#cases{
 
 .cases--description{
   h2{
-    padding-bottom: get-vh-m(12px);
-    color: #F7E246;
+    color: #FF8500;
   }
   p{
-    width: get-vh-m(245px);
-    padding-bottom: get-vh-m(38px);
+    width: max-content;
+    margin-top: get-vh-m(18px);
+
+    line-height: get-vh-m(20px);
+    span{
+      color: #FF8500;
+    }
   }
 }
 
 .cases--category{
   width: max-content;
   left: get-vh-m(8px);
-  &:not(:first-child){
+  &:nth-child(2){
+    margin-top: get-vh-m(24px);
+  }
+  &:nth-child(n+3){
     margin-top: get-vh-m(15px);
   }
 
@@ -51,7 +58,7 @@ section#cases{
 
     display: block;
 
-    mask-size: contain;
+    mask-size: get-vh-m(18px) auto;
     mask-position: center;
     mask-repeat: no-repeat;
     background-color: #FFA600;
@@ -82,9 +89,9 @@ section#cases{
 
     display: block;
 
-    mask-size: contain;
+    mask-size: get-vh-m(10px) auto;
     mask-repeat: no-repeat;
-    mask-position: bottom;
+    mask-position: center;
   }
 }
 

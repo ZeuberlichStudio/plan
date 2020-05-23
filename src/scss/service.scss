@@ -9,10 +9,6 @@ section#service{
   margin: 0 -1px;
 }
 
-.service--changeable{
-
-}
-
 /*text-blocks*/
 
 .service--text-service,
@@ -23,17 +19,17 @@ section#service{
 }
 
 .service--text-1.service--text-service{
-  width: get-vh(310px);
-
-  left: get-vh(806px);
-  top: get-vh(300px);
-}
-
-.service--text-2.service--text-service{
   width: get-vh(436px);
 
   left: get-vh(215px);
   top: get-vh(700px);
+}
+
+.service--text-2.service--text-service{
+  width: get-vh(310px);
+
+  left: get-vh(806px);
+  top: get-vh(300px);
 }
 
 .service--text-3.service--text-service{
@@ -44,17 +40,17 @@ section#service{
 }
 
 .service--text-1.service--text-team{
-  width: get-vh(298px);
-
-  left: get-vh(811px);
-  top: get-vh(300px);
-}
-
-.service--text-2.service--text-team{
   width: get-vh(310px);
 
   left: get-vh(278px);
   top: get-vh(700px);
+}
+
+.service--text-2.service--text-team{
+  width: get-vh(298px);
+
+  left: get-vh(811px);
+  top: get-vh(300px);
 }
 
 .service--text-3.service--text-team{
@@ -76,17 +72,17 @@ h2{
 
 .service--text-1
 h2{
-  color: #E99B5E;
+  color: #E3696F;
 }
 
 .service--text-2
 h2{
-  color: #E99B5E;
+  color: #F39540;
 }
 
 .service--text-3
 h2{
-  color: #E99B5E;
+  color: #FBB227;
 }
 
 /*lists*/
@@ -159,21 +155,26 @@ li{
   transition: 0.3s
 }
 
-.controls-container h2.selected{
+.controls-container h2.selected:nth-child(1){
   font-size: get-vh(35px);
-  color: rgb(233, 155, 94);
+  color: #F18F46;
+}
+.controls-container h2.selected:nth-child(3){
+  font-size: get-vh(35px);
+  color: #E79062;
 }
 
 /*notice*/
 
 span.notice{
-  width: get-vh(748px);
+  width: get-vh(780px);
   right: get-vh(104px); bottom: get-vh(67px);
 
   position: absolute;
   display: block;
 
   text-align: right;
+  white-space: pre-line;
 }
 
 /*switch*/
@@ -201,9 +202,13 @@ span.notice{
   left: get-vh(-6px);
   width: get-vh(30px);
   height: get-vh(30px);
-  background-color: #E78F62;
+  background-color: #E79062;
   border-radius: 50%;
   transition: 0.3s;
+}
+
+h2.selected ~ .switch .slider{
+    background-color: #F39541!important;
 }
 
 .switch input:checked + .slider{

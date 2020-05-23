@@ -16,26 +16,30 @@ section#about{
   margin-left: get-vh-m(8px);
 
   color: #F74695;
+  opacity: 0;
+  transition: opacity 0.5s 0s;
 }
 
 .about--p-1{
   margin-top: get-vh-m(18px);
+  align-self: justify;
 
   letter-spacing: -0.05vh;
   color: rgba(255,255,255, 0.85);
+
+  opacity: 0;
+  transition: opacity 0.5s 0.25s;
 
   span{
     display: none;
   }
 }
 
-.about--p-2{
-  margin-top: get-vh-m(28px);
-
-  letter-spacing: -0.05vh;
-  color: $main-white;
-}
-
 #macbook-wrapper{
   display: none;
+}
+
+#about-anchor{
+  left: 100vw; top: 0;
+  position: absolute;
 }

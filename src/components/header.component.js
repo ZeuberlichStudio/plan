@@ -3,35 +3,32 @@ import { Link } from 'react-router-dom';
 
 export default class Header extends Component{
 
+  componentDidMount(){
+
+    //gradient with property
+
+    document.documentElement.style.setProperty('--scroll_depth_px', '0px');
+    let descriptionContainer = document.getElementById('description-hide');
+
+    document.body.addEventListener('scroll', () => {
+      let scrollX = document.body.scrollLeft;
+
+      document.documentElement.style.setProperty('--scroll_depth_px', `${scrollX}px`);
+
+      if( scrollX > 100 && !descriptionContainer.style.width){
+        descriptionContainer.style.width = `0px`;
+      }else if(scrollX < 100 && descriptionContainer.style.width){
+        descriptionContainer.style = null;
+      }
+    },{
+      capture: true,
+      passive: true
+    });
+  }
+
   state = {
     burger_active: false,
     color_from: 0,
-  }
-
-  componentDidMount(){
-
-    if (window.innerWidth > 785){
-      let text = document.getElementById('description-hide');
-      let text_initial_width = text.offsetWidth;
-      document.body.addEventListener('scroll', () => {
-        let scroll_depth = document.body.scrollLeft;
-        text.style.width = scroll_depth > text_initial_width ? 0 : text_initial_width - scroll_depth + 'px';
-      }, {
-        capture: true,
-        passive: true
-      });
-    }
-
-    /*scroll css variavle*/
-    let scroll_depth_px = 0;
-    document.body.addEventListener('scroll', () => {
-      scroll_depth_px = document.body.scrollLeft;
-      document.documentElement.style.setProperty('--scroll_depth_px', `${scroll_depth_px}px`);
-    }, {
-      capture: true,
-      passive: true
-    })
-
   }
 
   Anchor = (e) => {
@@ -74,7 +71,7 @@ export default class Header extends Component{
   render (){
     return(
       <header id="header" className={ "color-" + this.state.color_from }>
-        <Link to="/" onClick={(e)=>this.Anchor(e)} data-link="start" className="logo"></Link>
+        <Link to="/" onClick={(e)=>this.Anchor(e)} data-link="start" className="logo" id="logo-container"></Link>
         <div id="description-hide" className="description-wrapper">
           <span className="description">
             Коммуникационное агентство
@@ -86,15 +83,15 @@ export default class Header extends Component{
           <div onClick={ () => this.openBurger() } className="hamburger-button">
           </div>
           <ul className="nav-links">
-            <li className="nav-item"><Link to="/" onClick={(e)=>this.Anchor(e)} data-link="about">мы</Link></li>
+            <li className="nav-item"><Link to="/" onClick={(e)=>this.Anchor(e)} data-link="about-anchor">мы</Link></li>
             <li className="nav-item"><Link to="/" onClick={(e)=>this.Anchor(e)} data-link="service">сервисы</Link></li>
             <li className="nav-item"><Link to="/" onClick={(e)=>this.Anchor(e)} data-link="cases">кейсы</Link></li>
             <li className="nav-item"><Link to="/" onClick={(e)=>this.Anchor(e)} data-link="contacts">контакты</Link></li>
           </ul>
         </nav>
         <div className="social">
-          <a href="https://www.instagram.com/plan.agency/?hl=ru" className="social-item"></a>
-          <a href="https://www.facebook.com/plan.agency/" className="social-item"></a>
+          <a href="https://www.instagram.com/plan.agency/?hl=ru" target="_blank" className="social-item"></a>
+          <a href="https://www.facebook.com/plan.agency/" target="_blank" className="social-item"></a>
         </div>
       </header>
     );

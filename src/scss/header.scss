@@ -25,23 +25,41 @@ header{
   width: get-vh(120px);
   height: get-vh(68px);
 
+  position: relative;
   display: block;
-
-  background-image: url('/images/gradient.svg');
-  background-size: get-vh(8.5 * 1920px) auto;
-  background-position: left calc( -1.85185vh - var(--scroll_depth_px)) top;
 
   mask-image: url('/images/logo.svg');
   mask-size: contain;
   mask-position: center;
+
+  background-image: url('/images/gradient.svg');
+  background-size: calc(177.77778vh * 4 + 800vh);
+  background-position: left calc(-1vh - var(--scroll_depth_px)) top;
+  will-change: background-position;
+
+
+  /*#gradient{
+    width: 850vw;
+    height: 100%;
+    left: -10px; top: 0;
+
+    position: absolute;
+
+    background-image: url('/images/gradient.svg');
+    background-size: 100%;
+    background-position: left;
+    will-change: left;
+  }*/
 }
 
 .description-wrapper{
-  width: get-vh(285px);
+  width: calc(26.38889vh);
   height: get-vh(42px);
 
   position: relative;
   overflow: hidden;
+
+  transition: width 0.5s;
 }
 
 .description{

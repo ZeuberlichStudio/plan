@@ -5,7 +5,7 @@ export default class MMidAnimation extends Component {
 
     let midContainer = document.getElementById('m-mid-animation-container');
 
-    let midAnimation = window.lottie.loadAnimation({
+    let mMidAnimation= window.lottie.loadAnimation({
       name: 'MMidAnimation',
       container: midContainer,
       renderer: 'svg',
@@ -16,11 +16,21 @@ export default class MMidAnimation extends Component {
 
     document.body.addEventListener('scroll', () => {
 
-      if( document.body.scrollLeft > document.documentElement.clientWidth){
+      if( document.body.scrollLeft > document.documentElement.clientWidth - 100){
         window.lottie.play('MMidAnimation');
       }
 
-    }, {capture: true, passive: true});
+    },
+    {
+     capture: true,
+     passive: true
+    });
+
+    mMidAnimation.addEventListener('complete', () => {
+      for( let i = 0; i < 2; i++ ){
+        document.getElementsByClassName('about--fade-in')[i].style.opacity = 1;
+      };
+    });
   }
 
   render (){

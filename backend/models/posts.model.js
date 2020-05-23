@@ -11,6 +11,7 @@ const postSchema= new Schema({
   year: { type: String, required: true },
   month: { type: String, required: true },
   date: { type: Date, required: true },
+  additionsHeder: { type: String, required: true },
   additions: [[{ type: String, required: true }]]
 }, {
   timestamps: true

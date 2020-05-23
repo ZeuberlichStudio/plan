@@ -12,13 +12,7 @@ section#contacts{
     width: max-content;
     color: #DF461E;
   }
-
-  .map{
-    width: get-vh(545px);
-    height: auto;
-    margin-top: get-vh(10px);
-  }
-
+  
   ul{
     width: get-vh(549px);
     margin-top: get-vh(10px);
@@ -61,14 +55,23 @@ section#contacts{
       background-position: center;
       background-repeat: no-repeat;
     }
-  }
 
-  h3{
-    width: get-vh(535px);
-    margin-top: get-vh(47px);
+    br{ display: none; }
   }
 
   .form-container{
+    width: get-vh(545px);
+    padding: 0 get-vh(4px) get-vh(4px) get-vh(4px);
+    margin-top: get-vh(16px);
+
+    backdrop-filter: blur(8px);
+    border-radius: get-vh(18px);
+  }
+  h3{
+    width: get-vh(535px);
+    margin-top: get-vh(30px);
+  }
+  #form{
     margin-top: get-vh(16px);
   }
 
@@ -97,16 +100,17 @@ section#contacts{
 
 
   .notice--content-wrapper{
-    width: 40%;
+    width: get-vw(800px);
     height: max-content;
     max-height: 100%;
-    padding: get-vh(40px);
+    padding: get-vw(40px);
     padding-top: 0;
 
+    position: relative;
     display: grid;
     grid-auto-flow: row;
     grid-auto-rows: max-content 1fr;
-    grid-row-gap: get-vh(40px);
+    grid-row-gap: get-vw(40px);
 
     background-color: black;
     border: $orange-yellow get-vh(2px) solid;
@@ -117,16 +121,18 @@ section#contacts{
 
   .notice--header{
     width: 100%;
-    height: get-vh(80px);
+    height: get-vw(80px);
 
     position: relative;
+    display: flex;
+    align-items: center;
 
     z-index: 2;
 
     #notice--close{
-      width: get-vh(28px);
-      height: get-vh(28px);
-      right: get-vh(0px);
+      width: get-vw(28px);
+      height: get-vw(28px);
+      right: get-vw(0px);
       top: 0; bottom: 0;
       margin: auto;
 
@@ -150,12 +156,39 @@ section#contacts{
 
   .notice--content{
     width: 100%;
-    overflow: scroll;
+    overflow: hidden;
 
     a{
       font-weight: bold;
       color: $orange-yellow;
       opacity: 0.6;
     }
+  }
+}
+
+/*scrollbar*/
+
+#notice-scrollbar-rail{
+  width: get-vw( 8px );
+  right: get-vw(22.5px);
+  top: get-vw(80px + 40px);
+  bottom: get-vw(40px);
+
+  position: absolute;
+  display: none;
+
+  border-radius: get-vw(20px);
+
+  #notice-scrollbar-thumb{
+    height: get-vw(50px);
+    width: get-vw( 8px );
+    right: 0;
+    top: 0; bottom: 0;
+
+    position: absolute;
+
+    border-radius: get-vw(20px);
+    background-color: #666668;
+    opacity: 0.5;
   }
 }

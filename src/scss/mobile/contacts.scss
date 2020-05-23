@@ -18,7 +18,7 @@ section#contacts{
   }
 
   .social{
-    margin-top: get-vh-m(48px);
+    margin-top: get-vh-m(68px);
 
     display: grid;
     grid-auto-flow: column;
@@ -51,7 +51,7 @@ section#contacts{
 
   h2{
     width: get-vh-m(327px);
-    margin-top: get-vh-m(74px);
+    margin-top: get-vh-m(54px);
 
     opacity: 0.6;
     color: #FF3D00;
@@ -60,7 +60,6 @@ section#contacts{
   ul{
     width: get-vh-m(327px);
     margin-top: get-vh-m(40px);
-    padding-right: get-vh-m(100px);
     align-self: center;
 
     display: grid;

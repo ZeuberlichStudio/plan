@@ -17,9 +17,14 @@ svg{
   justify-content: center;
   align-items: center;
 
+  transition-duration: 0.25s;
+
   #m-start-animation-container{
     width: auto;
     height: calc(var(--vh) * 100);
+    transform: scale(1);
+    transition-duration: 1.5s;
+    transition-delay: 0.25;
   }
 }
 

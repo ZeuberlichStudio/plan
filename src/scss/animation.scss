@@ -2,12 +2,8 @@ main{
   position: relative;
 }
 
-svg{
-  width: auto!important;
-}
-
 #start-animation-wrapper{
-  width: get-vh(1920px);
+  width: get-vh(2112px);
   height: 100vh;
   left: 0; top: 0;
 
@@ -16,19 +12,26 @@ svg{
   z-index: -1;
 
   #start-animation-container{
-    width: 100vw;
-    height: get-vh(1080px);
+    width: get-vh(2112px);
+    height: 100vh;
+
+    svg{
+      flex-shrink: 0;
+      width: get-vh(2112px)!important;
+      height: get-vh(1080px)!important;
+    }
   }
 }
 
 #mid-animation-wrapper{
   width: get-vh(4.5 * 1920px);
   height: 100vh;
-  left: get-vh(1920px); top: 0;
+  left: get-vh(2112px); top: 0;
 
   position: absolute;
 
   z-index: -1;
+  will-change: transform;
 
   #mid-animation-container{
     width: 100vw;
@@ -36,6 +39,14 @@ svg{
     left: 0; top: 0;
 
     position: sticky;
+    display: flex;
+    justify-content: left;
+
+    svg{
+      flex-shrink: 0;
+      width: auto!important;
+      height: get-vh(1080px)!important;
+    }
   }
 }
 

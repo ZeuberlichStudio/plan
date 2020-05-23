@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 export default class MidAnimation extends Component {
   componentDidMount() {
@@ -14,43 +14,33 @@ export default class MidAnimation extends Component {
       path: '/json/mid.json'
     });
 
+
     midAnimation.addEventListener('DOMLoaded', () => {
+
       let midTotalFrames = midAnimation.totalFrames;
 
-      /*scroll start*/
       document.body.addEventListener('scroll', () => {
           let scrollX = document.body.scrollLeft;
 
           let goTo = midTotalFrames * (scrollX / midWrapper.offsetWidth);
 
-          if( goTo > 0 && goTo < midTotalFrames - 5){
-            midAnimation.goToAndStop( Math.round(goTo), true);
+          if( goTo > 0 && goTo < midTotalFrames - 1 ){
+            midAnimation.goToAndStop( goTo, true);
           }
+      },{
+        capture: true,
+        passive: true
       });
-      /*scroll end*/
     });
-
-    let animationText = document.getElementsByClassName('fix');
-
-    midAnimation.addEventListener('enterFrame', () => {
-      if( midAnimation.currentFrame >= 70 ){
-        for( let i = 0; i < animationText.length; i++ ){
-          animationText[i].classList.add('fixed');
-        };
-      }else{
-        for( let i = 0; i < animationText.length; i++ ){
-          animationText[i].classList.remove('fixed');
-        };
-      }
-    });
-
   }
 
   render (){
     return(
-      <div id="mid-animation-wrapper">
-        <div id="mid-animation-container"></div>
-      </div>
+      <Fragment>
+        <div id="mid-animation-wrapper">
+          <div id="mid-animation-container"></div>
+        </div>
+      </Fragment>
     )
   }
 }

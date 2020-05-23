@@ -22,6 +22,10 @@ export default class EndAnimation extends Component {
         if( bound <= document.documentElement.clientWidth / 2 ){
           endAnimation.play();
         }
+      },
+      {
+        capture: true,
+        passive: true
       })
     });
   }

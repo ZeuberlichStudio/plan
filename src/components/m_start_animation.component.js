@@ -15,17 +15,17 @@ export default class MStartAnimation extends Component {
       path: '/json/m_start.json'
     });
 
-    startAnimation.addEventListener('complete', () => {
-      document.getElementById('phone-container').style.opacity = 1;
-      window.lottie.destroy('mStartAnimation');
-    });
-
-    document.body.addEventListener('scroll', () => {
+    /*document.body.addEventListener('scroll', () => {
       let scrolled = document.body.scrollLeft;
+      let clientWidth = document.documentElement.clientWidth;
 
-      document.getElementById('phone-container').style.transform = `translateZ(0) scale(${1 + document.body.scrollLeft/document.body.offsetWidth})`;
+      document.getElementById('phone-container').style.transform = `translateZ(0) scale(${1 + scrolled/clientWidth})`;
 
-    }, {capture: true, passive: true});
+    },
+    {
+      capture: true,
+      passive: true
+    });*/
   }
 
   render (){
