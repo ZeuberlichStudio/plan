@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.79 87.79">
+  <defs>
+    <style>
+      .cls-1{
+        fill:#08052b;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .cls-1{
+          fill:rgb(255,245,240);
+        }
+      }
+    </style>
+  </defs>
+<title>Coaction Fav BLK</title><g id="Слой_2" data-name="Слой 2"><g id="Слой_1-2" data-name="Слой 1"><rect class="cls-1" x="53.64" y="28.89" width="30" height="30" rx="5" transform="translate(51.14 -35.68) rotate(45)"/><rect class="cls-1" x="28.89" y="4.14" width="30" height="30" rx="5" transform="translate(26.39 -25.43) rotate(45)"/><rect class="cls-1" x="28.89" y="53.64" width="30" height="30" rx="5" transform="translate(61.39 -10.93) rotate(45)"/><rect class="cls-1" x="4.14" y="28.89" width="30" height="30" rx="5" transform="translate(36.64 -0.68) rotate(45)"/></g></g></svg>
