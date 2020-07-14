@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="112" height="28">
+  <g id="Cases" fill="none" stroke="#cf4c87" stroke-width="1">
+    <rect width="112" height="28" rx="14" stroke="none"/>
+    <rect x="0.5" y="0.5" width="111" height="27" rx="13.5" fill="none"/>
+  </g>
+</svg>
