@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Link} from 'react-router-dom';
 import { YMaps, Map, Placemark } from 'react-yandex-maps';
+import mapIcon from '../mapIcon.svg';
 
 class Form extends Component{
   state = {
@@ -224,6 +225,15 @@ export default class Contacts extends Component{
     overflow: 'hidden'
   };
 
+  mapIconOptions = {
+    iconLayout: "default#image",
+    iconImageHref: mapIcon,
+  }
+
+  mapIconProps = {
+    hintContent: "Plan",
+  }
+
   render() {
     return(
       <section id="contacts">
@@ -248,16 +258,16 @@ export default class Contacts extends Component{
             </li>
             <li>
               <span className="label">Адрес:</span>
-              <a href="https://goo.gl/maps/Juh3oQYPMoaFw6Yr6" target="_blank">125080 Москва,<br/> Волоколамское ш, д1, стр.1, офис 709А</a>
+              <a href="https://yandex.ru/maps/213/moscow/?ll=37.504681%2C55.806525&mode=search&oid=216252246573&ol=biz&z=18" target="_blank">125080 Москва,<br/> Волоколамское ш, д1, стр.1, офис 709А</a>
             </li>
           </ul>
           <div className="map">
             <YMaps>
               <Map
                 style={ this.mapStylePC }
-                defaultState={{ center: [55.806525, 37.504681], zoom: 15 }}
+                defaultState={{ center: [55.806525, 37.504681], zoom: 16 }}
               >
-                <Placemark geometry={[55.806525, 37.504681]} />
+                <Placemark geometry={[55.806525, 37.504681]} properties={this.mapIconProps} options={this.mapIconOptions} modules={['geoObject.addon.balloon', 'geoObject.addon.hint']}/>
               </Map>
             </YMaps>
           </div>
