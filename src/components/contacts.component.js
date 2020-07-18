@@ -274,7 +274,7 @@ export default class Contacts extends Component{
           <Form history={ this.props.history }/>
           <div className="phone-buttons">
             <a href="Tel: +7-903-161-55-33"></a>
-            <a href="https://goo.gl/maps/Juh3oQYPMoaFw6Yr6"></a>
+            <a href="https://yandex.ru/maps/213/moscow/?ll=37.504681%2C55.806525&mode=search&oid=216252246573&ol=biz&z=18"></a>
           </div>
       </section>
     )
