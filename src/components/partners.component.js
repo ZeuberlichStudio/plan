@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+//images
+import partners from 'images/partners.svg';
+
 export default class Partners extends Component{
 
   componentDidMount() {
@@ -21,7 +24,7 @@ export default class Partners extends Component{
 
   render() {
     return(
-      <div id="partners"><img alt="partners" src="/images/partners.svg"/></div>
+      <div id="partners"><img alt="partners" src={partners}/></div>
     )
   }
 }

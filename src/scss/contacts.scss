@@ -1,12 +1,29 @@
 section#contacts{
   width: 100vw;
   height: 100vh;
-  padding: get-vh(173px) get-vh(203px) 0 0;
+  padding: get-vh(120px) get-vh(203px) 0 0;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 
   position: relative;
+
+  #copyright{
+    position: absolute;
+    right: get-vh(203px);
+    bottom: get-vh(78px);
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+
+    span{
+      font-family: 'Proxima Nova';
+      font-weight: normal;
+      font-size: get-vh(20px);
+      line-height: get-vh(24px);
+      color: #707070;
+    }
+  }
 
   h2{
     width: max-content;
@@ -44,13 +61,13 @@ section#contacts{
     & li:nth-child(2)::before{
       margin-top: get-vh(4px);
 
-      background-image: url('/images/mail_icon.svg');
+      background-image: url('~images/mail_icon.svg');
       background-size: get-vh(15px) auto;
       background-position: center;
       background-repeat: no-repeat;
     }
     & li:nth-child(3)::before{
-      background-image: url('/images/map_icon.svg');
+      background-image: url('~images/map_icon.svg');
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
@@ -138,7 +155,7 @@ section#contacts{
 
       position: absolute;
 
-      background-image: url('/images/close.svg');
+      background-image: url('~images/close.svg');
       background-size: cover;
     }
 

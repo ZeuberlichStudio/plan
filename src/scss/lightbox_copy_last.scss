@@ -116,7 +116,7 @@
 
   position: absolute;
 
-  background-image: url('/images/close.svg');
+  background-image: url('~images/close.svg');
   background-size: cover;
 }
 
@@ -279,7 +279,7 @@ li{
     position: absolute;
     display: block;
 
-    mask-image: url('/images/triangle.svg');
+    mask-image: url('~images/triangle.svg');
     mask-size: get-vw(12px) get-vw(12px);
     mask-position: bottom;
     mask-repeat: no-repeat;

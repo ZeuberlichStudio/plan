@@ -24,6 +24,22 @@ export default class Header extends Component{
       capture: true,
       passive: true
     });
+
+    document.getElementById('content').addEventListener('scroll', e => {
+      let scrollX = document.getElementById('content').scrollLeft;
+      const isMobile = this.props.mobile;
+
+      document.documentElement.style.setProperty('--scroll_depth_px', `${scrollX}px`);
+
+      if( scrollX > 100 && !descriptionContainer.style.width){
+        descriptionContainer.style.width = `0px`;
+      }else if(scrollX < 100 && descriptionContainer.style.width){
+        descriptionContainer.style = null;
+      }
+    },{
+      capture: true,
+      passive: true
+    });
   }
 
   state = {
@@ -31,47 +47,65 @@ export default class Header extends Component{
     color_from: 0,
   }
 
-  Anchor = (e) => {
-
-    let link = e.currentTarget.dataset.link;
-    let goTo = document.getElementById(link).offsetLeft;
-
-    let id = setInterval(frame, 0.5);
-    let position = document.body.scrollLeft;
-    let i = 0;
-    let step;
-
-    function frame() {
-      if( position === goTo ){
-        clearInterval(id);
-      }else{
-        i += 1.5;
-        step = (1 * i);
-        if( position < goTo ){
-           position += step
-           position = position > goTo ? goTo : position
-         }
-        else{
-          position -= step
-          position = position < goTo ? goTo : position
-        }
-
-        document.body.scrollTo(position, 0);
-      }
-    }
-  }
-
-
-
   openBurger = () => {
     let burger_active = this.state.burger_active ? false : true;
     this.setState({ burger_active });
   }
 
+  navClickHandler = (e, time, horizontal = true) => {
+    e.preventDefault();
+    const contentContainer = document.getElementById('content');
+    const isMobile = this.props.mobile;
+    const isAppleDevice = [
+      'iPad Simulator',
+      'iPhone Simulator',
+      'iPod Simulator',
+      'iPad',
+      'iPhone',
+      'iPod',
+      'MacIntel'
+    ].includes(this.props.platform);
+    const anchor = document.getElementById(e.currentTarget.dataset.anchor);
+    const scrollLength = horizontal ? anchor.getBoundingClientRect().left : anchor.getBoundingClientRect().top;
+    const anchorPosition = horizontal ? anchor.offsetLeft : anchor.offsetTop;
+    const direction = scrollLength > 0 ? 1 : 0;
+
+    if (isMobile && !isAppleDevice) contentContainer.style.scrollSnapType = "none";
+    const interval = setInterval(intervalCallback, 10);
+
+    function intervalCallback() {
+      const windowPosition = isMobile ? document.getElementById('content').scrollLeft : document.body.scrollLeft;
+      const nextPosition = windowPosition + scrollLength/60/time;
+
+      if(
+        direction && nextPosition < anchorPosition ||
+        !direction && nextPosition > anchorPosition
+      ){
+
+        if (isMobile) {
+          contentContainer.scrollTo( nextPosition, 0 );
+        }else{
+          document.body.scrollTo(nextPosition, 0);
+        }
+          
+      }else{
+        
+        if (isMobile) {
+          contentContainer.scrollTo( nextPosition, 0 );
+        }else{
+          document.body.scrollTo(nextPosition, 0);
+        }
+
+        clearInterval(interval);
+        if (isMobile && !isAppleDevice) contentContainer.style.scrollSnapType = null;
+      }
+    }
+  }
+
   render (){
     return(
       <header id="header" className={ "color-" + this.state.color_from }>
-        <Link to="/" onClick={(e)=>this.Anchor(e)} data-link="start" className="logo" id="logo-container"></Link>
+        <Link to="/" onClick={ e => this.navClickHandler(e, 0.75) } data-anchor="start" className="logo" id="logo-container"></Link>
         <div id="description-hide" className="description-wrapper">
           <span className="description">
             Коммуникационное агентство
@@ -83,10 +117,10 @@ export default class Header extends Component{
           <div onClick={ () => this.openBurger() } className="hamburger-button">
           </div>
           <ul className="nav-links">
-            <li className="nav-item"><Link to="/" onClick={(e)=>this.Anchor(e)} data-link="about-anchor">мы</Link></li>
-            <li className="nav-item"><Link to="/" onClick={(e)=>this.Anchor(e)} data-link="service">сервисы</Link></li>
-            <li className="nav-item"><Link to="/" onClick={(e)=>this.Anchor(e)} data-link="cases">кейсы</Link></li>
-            <li className="nav-item"><Link to="/" onClick={(e)=>this.Anchor(e)} data-link="contacts">контакты</Link></li>
+            <li className="nav-item"><Link to="/" onClick={ e => this.navClickHandler(e, 0.75) } data-anchor="about-anchor">мы</Link></li>
+            <li className="nav-item"><Link to="/" onClick={ e => this.navClickHandler(e, 0.75) } data-anchor="service">сервисы</Link></li>
+            <li className="nav-item"><Link to="/" onClick={ e => this.navClickHandler(e, 0.75) } data-anchor="cases">кейсы</Link></li>
+            <li className="nav-item"><Link to="/" onClick={ e => this.navClickHandler(e, 0.75) } data-anchor="contacts">контакты</Link></li>
           </ul>
         </nav>
         <div className="social">

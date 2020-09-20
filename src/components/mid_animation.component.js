@@ -1,5 +1,8 @@
 import React, { Component, Fragment } from 'react';
 
+//animation data
+import mid from 'json/mid.json';
+
 export default class MidAnimation extends Component {
   componentDidMount() {
 
@@ -11,7 +14,7 @@ export default class MidAnimation extends Component {
       renderer: 'svg',
       loop: false,
       autoplay: false,
-      path: '/json/mid.json'
+      animationData: mid
     });
 
 

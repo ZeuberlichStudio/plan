@@ -29,7 +29,7 @@
   right: get-vw(40px);
   position: absolute;
   z-index: 3;
-  background: url('/images/close.svg') center / cover;
+  background: url('~images/close.svg') center / cover;
   transition: 0.3s opacity;
 }
 
@@ -53,7 +53,7 @@
     overflow: hidden;
     background-color: $main-black;
     border-radius: get-vw(50px);
-    z-index: 2;
+    z-index: 3;
   }
 
   &_header.static{
@@ -289,7 +289,7 @@
         width: get-vw(12px);
         height: get-vw(12px);
         display: inline-block;
-        background: url('/images/triangle.svg') center / 100% auto no-repeat;
+        background: url('~images/triangle.svg') center / 100% auto no-repeat;
         content: '';
       }
 
@@ -335,7 +335,7 @@
     background: white;
     z-index:1;
     cursor: pointer;
-    background: url('/images/arrow.svg') center / 100% auto;
+    background: url('~images/arrow.svg') center / 100% auto;
   }
 
   &_prev{
@@ -420,7 +420,7 @@
     height: 100%;
     left: 0; top: 0;
     position: absolute;
-    background: url('/images/video.svg') center / 100% auto no-repeat;
+    background: url('~images/video.svg') center / 100% auto no-repeat;
     z-index: 2;
     pointer-events: none;
     content: '';

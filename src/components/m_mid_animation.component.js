@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+//animation data
+import mid from 'json/m_mid.json';
+
 export default class MMidAnimation extends Component {
   componentDidMount() {
 
@@ -11,13 +14,13 @@ export default class MMidAnimation extends Component {
       renderer: 'svg',
       loop: false,
       autoplay: false,
-      path: '/json/m_mid.json'
+      animationData: mid
     });
 
-    document.body.addEventListener('scroll', () => {
-
-      if( document.body.scrollLeft > document.documentElement.clientWidth - 100){
-        window.lottie.play('MMidAnimation');
+    document.getElementById('content').addEventListener('scroll', () => {
+      
+      if( this.containerRef.current.getBoundingClientRect().left >= 0 && this.containerRef.current.getBoundingClientRect().left <= 10 ){
+        mMidAnimation.playSegments([120, 350], true);
       }
 
     },
@@ -33,9 +36,11 @@ export default class MMidAnimation extends Component {
     });
   }
 
+  containerRef = React.createRef();
+
   render (){
     return(
-      <div id="m-mid-animation-wrapper">
+      <div ref={this.containerRef} id="m-mid-animation-wrapper">
         <div id="m-mid-animation-container"></div>
       </div>
     )

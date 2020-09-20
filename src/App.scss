@@ -1,7 +1,7 @@
-@import './scss/fonts.scss';
-@import './scss/variables.scss';
-@import './scss/functions.scss';
-@import './scss/typography.scss';
+@import '~scss/fonts.scss';
+@import '~scss/variables.scss';
+@import '~scss/functions.scss';
+@import '~scss/typography.scss';
 
 *{
   box-sizing: border-box;
@@ -30,31 +30,51 @@
     }
   }
 
-  @import './scss/mixins.scss';
-  @import './scss/animation.scss';
-  @import './scss/start.scss';
-  @import './scss/about.scss';
-  @import './scss/header.scss';
-  @import './scss/service.scss';
-  @import './scss/cases.scss';
-  @import './scss/contacts.scss';
-  @import './scss/lightbox.scss';
-  @import './scss/form.scss';
+  @import '~scss/mixins.scss';
+  @import '~scss/animation.scss';
+  @import '~scss/start.scss';
+  @import '~scss/about.scss';
+  @import '~scss/header.scss';
+  @import '~scss/service.scss';
+  @import '~scss/cases.scss';
+  @import '~scss/contacts.scss';
+  @import '~scss/lightbox.scss';
+  @import '~scss/form.scss';
 }
 
 @media screen and (max-width: 1024px){
 
+  body, .root, .App{ overflow-x: hidden!important; }
+
+  main{
+    width: 100vw!important;
+    overflow-x: scroll!important;
+    overflow-y: hidden!important;
+    scroll-snap-type: x mandatory;
+    
+
+    section,
+    #service-add-0,
+    #service-add-1,
+    #cases-add-0,
+    #cases-add-1{
+      flex-shrink: 0;
+      scroll-snap-align: start start;
+      scroll-snap-stop: always;
+    }
+  }
+  
   #partners{display: none;}
 
-  @import './scss/mobile/mixins.scss';
-  @import './scss/mobile/animation.scss';
-  @import './scss/mobile/header.scss';
-  @import './scss/mobile/start.scss';
-  @import './scss/mobile/about.scss';
-  @import './scss/mobile/service.scss';
-  @import './scss/mobile/cases.scss';
-  @import './scss/mobile/contacts';
-  @import './scss/mobile/lightbox.scss';
+  @import '~scss/mobile/mixins.scss';
+  @import '~scss/mobile/animation.scss';
+  @import '~scss/mobile/header.scss';
+  @import '~scss/mobile/start.scss';
+  @import '~scss/mobile/about.scss';
+  @import '~scss/mobile/service.scss';
+  @import '~scss/mobile/cases.scss';
+  @import '~scss/mobile/contacts';
+  @import '~scss/mobile/lightbox.scss';
 }
 
 html{
@@ -64,7 +84,7 @@ html{
 html{
   width: 100vw;
   height: calc(var(--vh, 1vh) * 100);
-  background-image: url('/images/bg.svg');
+  background-image: url('~images/bg.svg');
   background-size: 100%;
   background-repeat: no-repeat;
 }

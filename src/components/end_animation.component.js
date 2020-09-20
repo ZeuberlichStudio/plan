@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+//animation data
+import end from 'json/end.json';
+
 export default class EndAnimation extends Component {
   componentDidMount() {
 
@@ -11,7 +14,7 @@ export default class EndAnimation extends Component {
       renderer: 'svg',
       loop: false,
       autoplay: false,
-      path: '/json/end.json'
+      animationData: end
     });
 
     endAnimation.addEventListener('DOMLoaded', () => {

@@ -35,7 +35,7 @@ class Categories extends Component{
         { this.state.cats.map( (cat, i) =>
 
           <div key={i} className={ "cases--category cases--category-" + ++i }>
-            <i style={{ WebkitMaskImage: 'url(' + cat.icon + ')' }}></i>
+            <i style={{ WebkitMaskImage: 'url(' + process.env.PUBLIC_URL + cat.icon + ')' }}></i>
             <h2 className="comfortaa-35 m-proxima-14 dark">
               <Link to={ 'posts/cat=' + cat._id }>{cat.name}</Link>
             </h2>
@@ -85,12 +85,12 @@ export default class Cases extends Component{
       { this.state.clients.length > 0 ?  <div className="cases--clients-container">
           { this.state.clients.map( (client, i) =>
             <div key={i} className="cases--client">
-              <h2 className="comfortaa-35 m-comfortaa-14 dark">
+              <h2 className="comfortaa-35 m-comfortaa-18 dark">
               { client.has_posts ?
                 <Link to={ 'posts/client=' + client._id } className="white">{ client.name }</Link>
                : client.name }
               </h2>
-              { client.cats.map( (cat, i) => <i key={i} style={{ WebkitMaskImage: 'url(' + cat.icon + ')' }}></i> ) }
+              { client.cats.map( (cat, i) => <i key={i} style={{ WebkitMaskImage: 'url(' + process.env.PUBLIC_URL + cat.icon + ')' }}></i> ) }
             </div>
           ) }
         </div>:null}

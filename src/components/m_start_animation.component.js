@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+//animation data
+import start from 'json/m_start.json';
+
 export default class MStartAnimation extends Component {
   componentDidMount() {
 
@@ -12,7 +15,7 @@ export default class MStartAnimation extends Component {
       renderer: 'svg',
       loop: false,
       autoplay: true,
-      path: '/json/m_start.json'
+      animationData: start
     });
 
     /*document.body.addEventListener('scroll', () => {

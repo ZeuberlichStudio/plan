@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Route, withRouter } from 'react-router-dom';
 import './App.scss';
 
@@ -34,9 +34,14 @@ class App extends Component {
 
     window.dispatchEvent( new Event('resize') );
   }
-
+  
   state = {
-    animation: false
+    animation: false,
+    platform: this.Platform
+  }
+
+  get Platform() {
+    return window.navigator.platform;
   }
 
   scrollHorizontally = e => {
@@ -45,12 +50,12 @@ class App extends Component {
       e = window.event || e;
       var delta = Math.max(-1, Math.min(1, e.wheelDeltaY));
       document.body.scrollLeft -= (delta*150); // Multiplied by 40
-      e.preventDefault();
+      //e.preventDefault();
     }else{
       e = window.event || e;
       var delta = Math.max(-1, Math.min(1, e.wheelDeltaX));
       document.body.scrollLeft -= (delta); // Multiplied by 40
-      e.preventDefault();
+      //e.preventDefault();
       document.body.style.overflowX = 'scroll';
     }
   }
@@ -66,16 +71,18 @@ class App extends Component {
 
     return(
       <div className="App">
-        <Header />
-        <main>
+        <Header mobile={!this.state.animation} platform={this.state.platform}/>
+        <main id="content">
             { this.state.animation ? <StartAnimation /> : <MStartAnimation /> }
             { this.state.animation ? <MidAnimation /> : <MMidAnimation /> }
             { this.state.animation ? <EndAnimation /> : null }
             <Start />
             <About />
             <Service />
+            { !this.state.animation && <Fragment><div id="service-add-0"></div><div id="service-add-1"></div></Fragment> }
             <Cases />
-            <Contacts history={ this.props.history }/>
+            { !this.state.animation && <Fragment><div id="cases-add-0"></div><div id="cases-add-1"></div></Fragment> }
+            <Contacts {...this.props} isMobile={!this.state.animation}/>
             <Route path="/posts" render={ props => <Modal {...props}/> } />
         </main>
         <Partners/>

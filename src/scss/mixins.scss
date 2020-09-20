@@ -39,3 +39,10 @@
   font-size: get-vw(16px);
   line-height: get-vw(20px);
 }
+
+@mixin vh-proxima-16{
+  font-family: 'Proxima Nova';
+  font-weight: normal;
+  font-size: get-vh(16px);
+  line-height: get-vh(20px);
+}

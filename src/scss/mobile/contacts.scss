@@ -3,22 +3,42 @@ section#contacts{
   height: calc( var(--vh) * 100 );
   padding-top: get-vh-m(60px);
 
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  #copyright{
+    position: absolute;
+    padding: 0 get-vh-m(20px);
+    right: 0;
+    bottom: get-vh-m(14px);
+    display: flex;
+    flex-direction: column;
+
+    span{
+      font-family: 'Proxima Nova';
+      font-weight: 600;
+      font-size: calc(var(--vh) * 2.15385);
+      line-height: calc(var(--vh) * 2.46154);
+      color: #707070;
+    }
+
+    span:nth-child(2){ margin-top: get-vh-m(6px); }
+  }
 
   .plan{
     width: get-vh-m(154px);
     height: get-vh-m(95.97px);
 
-    background-image: url('/images/mobile/plan.svg');
+    background-image: url('~images/mobile/plan.svg');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
   }
 
   .social{
-    margin-top: get-vh-m(68px);
+    margin-top: get-vh-m(60px);
 
     display: grid;
     grid-auto-flow: column;
@@ -36,22 +56,22 @@ section#contacts{
     }
 
     & :nth-child(1){
-      background-image: url('/images/mobile/wa.svg');
+      background-image: url('~images/mobile/wa.svg');
     }
     & :nth-child(2){
-      background-image: url('/images/mobile/mail.svg');
+      background-image: url('~images/mobile/mail.svg');
     }
     & :nth-child(3){
-      background-image: url('/images/mobile/inst.svg');
+      background-image: url('~images/mobile/inst.svg');
     }
     & :nth-child(4){
-      background-image: url('/images/mobile/fb.svg');
+      background-image: url('~images/mobile/fb.svg');
     }
   }
 
   h2{
     width: get-vh-m(327px);
-    margin-top: get-vh-m(54px);
+    margin-top: get-vh-m(24px);
 
     opacity: 0.6;
     color: #FF3D00;
@@ -59,7 +79,7 @@ section#contacts{
 
   ul{
     width: get-vh-m(327px);
-    margin-top: get-vh-m(40px);
+    margin-top: get-vh-m(20px);
     align-self: center;
 
     display: grid;
@@ -79,7 +99,7 @@ section#contacts{
   }
 
   .phone-buttons{
-    margin-top: get-vh-m(25px);
+    margin-top: get-vh-m(24px);
 
     display: grid;
     grid-auto-flow: column;
@@ -96,10 +116,10 @@ section#contacts{
     }
 
     & :nth-child(1){
-      background-image: url('/images/mobile/call.svg');
+      background-image: url('~images/mobile/call.svg');
     }
     & :nth-child(2){
-      background-image: url('/images/mobile/map.svg');
+      background-image: url('~images/mobile/map.svg');
     }
   }
 

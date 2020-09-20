@@ -1,8 +1,16 @@
 section#cases{
-  width: max-content;
-  min-width: get-vh-m(375px);
+  width: 100vw;
   height: calc(var(--vh, 1vh) * 100);
-  padding: get-vh-m(78px) get-vh-m(8px) get-vh-m(8px) get-vh-m(48px);
+  padding: get-vh-m(78px) 0 get-vh-m(8px) get-vh-m(28px);
+  overflow-x: visible;
+}
+
+#cases-add-0,
+#cases-add-1{
+  flex-shrink: 0;
+  width: 100vw;
+  scroll-snap-align: start;
+  pointer-events: none;
 }
 
 .cases--categories-container{
@@ -12,6 +20,14 @@ section#cases{
 }
 
 .cases--description{
+
+  & > * {
+    width: max-content;
+    left: get-vh-m(28px);
+    margin-right: calc(-200vw + #{get-vh-m(28px)});
+    position: sticky;
+  }
+
   h2{
     color: #FF8500;
   }
@@ -28,7 +44,10 @@ section#cases{
 
 .cases--category{
   width: max-content;
-  left: get-vh-m(8px);
+  left: get-vh-m(28px);
+  margin-right: calc(-200vw + #{get-vh-m(28px)});
+  position: sticky;
+
   &:nth-child(2){
     margin-top: get-vh-m(24px);
   }
@@ -36,7 +55,6 @@ section#cases{
     margin-top: get-vh-m(15px);
   }
 
-  position: sticky;
   display: grid;
   grid-template:
   max-content /
@@ -66,12 +84,13 @@ section#cases{
 }
 
 .cases--clients-container{
+  width: calc(300vw - #{get-vh-m(28px)});
   padding-top: get-vh-m(76px);
 
   display: grid;
   grid-auto-flow: column;
-  grid-template: repeat(7, max-content) / repeat(3, calc(200vw/3 - 16px));
-  grid-row-gap: get-vh-m(10px);
+  grid-template: repeat(7, max-content) / repeat(3, calc(100vw - #{get-vh-m(28px)}));
+  grid-gap: get-vh-m(18px) get-vh-m(28px);
   justify-items: flex-start;
 }
 
@@ -83,13 +102,13 @@ section#cases{
   grid-column-gap: get-vh-m(4px);
 
   i{
-    width: get-vh-m(10px);
-    height: get-vh-m(10px);
+    width: get-vh-m(14px);
+    height: get-vh-m(14px);
     margin-top: get-vh-m(1px);
 
     display: block;
 
-    mask-size: get-vh-m(10px) auto;
+    mask-size: get-vh-m(14px) auto;
     mask-repeat: no-repeat;
     mask-position: center;
   }

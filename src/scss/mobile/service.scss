@@ -1,6 +1,7 @@
 section#service{
-  width: get-vh-m(1125px);
+  width: 100vw;
   height: calc(var(--vh, 1vh) * 100);
+  padding-bottom: get-vh-m(20px);
 
   position: relative;
   display: grid;
@@ -8,15 +9,33 @@ section#service{
   "text-1 text-2 text-3"
   "switch switch switch";
   grid-template-rows: max-content get-vh-m(23px);
-  grid-template-columns: repeat(3, get-vh-m(318px));
-  grid-column-gap: get-vh-m(57px);
+  grid-auto-columns: max-content;
   align-content: space-between;
 
-  padding: 0 get-vh-m(48px) get-vh-m(20px) get-vh-m(25px);
+  &::before{
+    width: 300vw;
+    height: 100%;
+    margin: auto;
+    left: 0;
+    position: absolute;
+    background-image: url('~images/mobile/service.svg');
+    background-size: calc(100% - 67px) auto;
+    background-position: calc(var(--vh)*2.30769) calc(var(--vh)*3.07692);
+    background-repeat: no-repeat;
+    content: '';
+  }
+}
 
-  background-image: url('/images/mobile/service.svg');
-  background-size: calc(100% - 15px - 52px) auto;
-  background-position: get-vh-m(15px) get-vh-m(20px);
+#service-add-0,
+#service-add-1{ 
+  width: 100vw; 
+  flex-shrink: 0; 
+  pointer-events: none;
+}
+
+.service--text{
+  width: 100vw;
+  padding: 0 get-vh-m(28px);
 }
 
 .service--text-1{
@@ -84,10 +103,11 @@ h2{
 /*state headers*/
 
 .controls-container{
-  width: get-vh-m(192px);
+  width: max-content;
   height: get-vh-m(22px);
-  margin-left: get-vh-m(72px);
-  left: get-vh-m(92px);
+  left: calc((100vw - #{get-vh-m(206px)})/2);
+  margin-left: calc((100vw - #{get-vh-m(206px)})/2);
+  margin-right: calc(-200vw + (100vw - #{get-vh-m(206px)})/2);
 
   position: sticky;
   display: grid;
@@ -95,7 +115,7 @@ h2{
   grid-auto-flow: column;
   grid-column-gap: get-vh-m(8px);
   grid-template-columns:
-  1fr get-vh-m(40px) 1fr;
+  max-content get-vh-m(40px) max-content;
 
   align-items: center;
 }

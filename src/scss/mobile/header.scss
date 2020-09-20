@@ -30,23 +30,23 @@ header{
 }
 
 .logo{
-  background: url('/images/mobile/gradient.svg');
-  background-size: calc(5 * 100vw + var(--vh) * 173.07692) auto;
-  background-position: left calc(var(--vh) * -1.846 - var(--scroll_depth_px) ) top;
+  background: url('~images/mobile/gradient.svg');
+  background-size: 100vw*10 auto;
+  background-position: left calc( #{get-vh-m(-12px)} - var(--scroll_depth_px) ) top 0;
 }
 
 .hamburger-button,
 .nav-item a::after,
 .nav-item::before{
-  background: url('/images/mobile/gradient.svg');
-  background-size: calc(5 * 100vw + var(--vh) * 173.07692) auto;
-  background-position: right calc((-4 * 100vw - var(--vh) * 178.07692) + var(--scroll_depth_px) ) top;
+  background: url('~images/mobile/gradient.svg');
+  background-size: 100vw*10 auto;
+  background-position: left calc( -100vw + #{get-vh-m(40px)} - var(--scroll_depth_px) ) top 0;
 }
 
 .burger-active .nav-item{
-  background: url('/images/mobile/gradient.svg');
-  background-size: calc(5 * 100vw + var(--vh) * 173.07692) auto;
-  background-position: right calc((-4 * 100vw - var(--vh) * 178.07692) + var(--scroll_depth_px) ) top;
+  background: url('~images/mobile/gradient.svg');
+  background-size: 100vw*10 auto;
+  background-position: left calc( -100vw + #{get-vh-m(40px)} - var(--scroll_depth_px) ) top 0;
 }
 
 
@@ -59,7 +59,7 @@ header .logo{
 
   margin-top: get-vh-m(8px);
 
-  mask: url('/images/logo.svg');
+  mask: url('~images/logo.svg');
   mask-size: 100% auto;
   mask-position: center;
 }
@@ -83,13 +83,13 @@ nav{
 
   display: block;
 
-  mask: url('/images/mobile/masks/burger.svg');
+  mask: url('~images/mobile/masks/burger.svg');
   mask-size: 100%;
   mask-position: center;
 }
 
 nav.burger-active .hamburger-button{
-  mask: url('/images/mobile/masks/burger_back.svg');
+  mask: url('~images/mobile/masks/burger_back.svg');
   mask-size: 100%;
   mask-position: center;
 }
@@ -156,19 +156,19 @@ header .nav-links{
 /*navigation -- list icons*/
 
 .nav-item:nth-child(1) a::after{
-  mask: url('/images/mobile/masks/about_icon.svg');
+  mask: url('~images/mobile/masks/about_icon.svg');
 }
 
 .nav-item:nth-child(2) a::after{
-  mask: url('/images/mobile/masks/service_icon.svg');
+  mask: url('~images/mobile/masks/service_icon.svg');
 }
 
 .nav-item:nth-child(3) a::after{
-  mask: url('/images/mobile/masks/cases_icon.svg');
+  mask: url('~images/mobile/masks/cases_icon.svg');
 }
 
 .nav-item:nth-child(4) a::after{
-  mask: url('/images/mobile/masks/contacts_icon.svg');
+  mask: url('~images/mobile/masks/contacts_icon.svg');
 }
 
 /*navigation border*/
@@ -189,28 +189,28 @@ header .nav-links{
 }
 
 .nav-item:nth-child(1)::before{
-  mask: url('/images/mobile/masks/about_border.svg');
+  mask: url('~images/mobile/masks/about_border.svg');
   mask-size: auto get-vh-m(28px);
   mask-position: left center;
   mask-repeat: no-repeat;
 }
 
 .nav-item:nth-child(2)::before{
-  mask: url('/images/mobile/masks/service_border.svg');
+  mask: url('~images/mobile/masks/service_border.svg');
   mask-size: auto get-vh-m(28px);
   mask-position: left center;
   mask-repeat: no-repeat;
 }
 
 .nav-item:nth-child(3)::before{
-  mask: url('/images/mobile/masks/cases_border.svg');
+  mask: url('~images/mobile/masks/cases_border.svg');
   mask-size: auto get-vh-m(28px);
   mask-position: left center;
   mask-repeat: no-repeat;
 }
 
 .nav-item:nth-child(4)::before{
-  mask: url('/images/mobile/masks/contacts_border.svg');
+  mask: url('~images/mobile/masks/contacts_border.svg');
   mask-size: auto get-vh-m(28px);
   mask-position: left center;
   mask-repeat: no-repeat;

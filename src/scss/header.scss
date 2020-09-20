@@ -28,11 +28,11 @@ header{
   position: relative;
   display: block;
 
-  mask-image: url('/images/logo.svg');
+  mask-image: url('~images/logo.svg');
   mask-size: contain;
   mask-position: center;
 
-  background-image: url('/images/gradient.svg');
+  background-image: url('~images/gradient.svg');
   background-size: calc(177.77778vh * 4 + 800vh);
   background-position: left calc(-1vh - var(--scroll_depth_px)) top;
   will-change: background-position;
@@ -45,7 +45,7 @@ header{
 
     position: absolute;
 
-    background-image: url('/images/gradient.svg');
+    background-image: url('~images/gradient.svg');
     background-size: 100%;
     background-position: left;
     will-change: left;
@@ -133,14 +133,14 @@ nav::before{
 }
 
 .social-item:nth-child(1){
-  mask-image: url('/images/inst_icon.svg');
+  mask-image: url('~images/inst_icon.svg');
   mask-size: 100%;
   mask-position: center;
   mask-repeat: no-repeat;
 }
 
 .social-item:nth-child(2){
-  mask-image: url('/images/fb_icon.svg');
+  mask-image: url('~images/fb_icon.svg');
   mask-size: 100%;
   mask-position: center;
   mask-repeat: no-repeat;

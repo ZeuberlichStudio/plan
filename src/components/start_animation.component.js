@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+//animation data
+import start from 'json/start.json';
+
 export default class startAnimation extends Component {
   componentDidMount() {
     let startContainer = document.getElementById('start-animation-container');
@@ -9,7 +12,7 @@ export default class startAnimation extends Component {
         renderer: 'svg',
         loop: false,
         autoplay: true,
-        path: '/json/start.json'
+        animationData: start
       });
     };
 

@@ -156,17 +156,17 @@ export default class Service extends Component{
           <h2 className={ this.state.switch ? 'selected' : '' }>Команда</h2>
         </div>
 
-        <div className={ this.state.switch ? 'service--text-1  service--text-team' : 'service--text-1 service--text-service' }>
+        <div className={`service--text ${this.state.switch ? 'service--text-1  service--text-team' : 'service--text-1 service--text-service'}`}>
           <h2 className="comfortaa-35 m-comfortaa-30">Исследуем</h2>
           { this.state.switch ? <TeamText1/> : <ServiceText1/> }
         </div>
 
-        <div className={ this.state.switch ? 'service--text-2  service--text-team' : 'service--text-2 service--text-service' }>
+        <div className={`service--text ${this.state.switch ? 'service--text-2  service--text-team' : 'service--text-2 service--text-service'}`}>
           <h2 className="comfortaa-35 m-comfortaa-30">Стратегируем</h2>
           { this.state.switch ? <TeamText2/> : <ServiceText2/> }
         </div>
 
-        <div className={ this.state.switch ? 'service--text-3  service--text-team' : 'service--text-3 service--text-service' }>
+        <div className={`service--text ${this.state.switch ? 'service--text-3  service--text-team' : 'service--text-3 service--text-service'}`}>
           <h2 className="comfortaa-35 m-comfortaa-30">Коммуницируем</h2>
           { this.state.switch ? <TeamText3/> : <ServiceText3/> }
         </div>

@@ -36,8 +36,8 @@
 
   display: flex;
   align-items: center;
-  background-color: $main-black;
   border-radius: get-vh-m(16px);
+  background: #000;
   z-index: 2;
 
   &::before{
@@ -71,7 +71,7 @@
 
   position: absolute;
 
-  background-image: url('/images/close.svg');
+  background-image: url('~images/close.svg');
   background-size: cover;
 }
 
@@ -190,7 +190,7 @@
     position: absolute;
     display: block;
 
-    background: url('/images/triangle.svg') left bottom/ get-vh-m(8px) get-vh-m(8px) no-repeat;
+    background: url('~images/triangle.svg') left bottom/ get-vh-m(8px) get-vh-m(8px) no-repeat;
     content: '';
   }
 }
@@ -217,7 +217,7 @@
       height: 100%;
       left: 0; top: 0;
       position: absolute;
-      background: url('/images/video.svg') center / 100% auto no-repeat;
+      background: url('~images/video.svg') center / 100% auto no-repeat;
       z-index: 2;
       pointer-events: none;
       content: '';
@@ -242,7 +242,7 @@
     z-index:1;
     border: none;
     cursor: pointer;
-    background: url('/images/arrow.svg') center / 100% auto;
+    background: url('~images/arrow.svg') center / 100% auto;
   }
 
   &_prev{
