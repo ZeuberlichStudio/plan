@@ -5,7 +5,7 @@ export default class Switch extends Component {
     return(
       <label className="switch">
         <input onClick={ () => this.props.onClick() } type="checkbox" />
-        <span className="slider"></span>
+        <span className="switch-button"></span>
       </label>
     )
   }

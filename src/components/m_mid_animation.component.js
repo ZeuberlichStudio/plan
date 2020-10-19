@@ -4,11 +4,15 @@ import React, { Component } from 'react';
 import mid from 'json/m_mid.json';
 
 export default class MMidAnimation extends Component {
+  
+  containerRef = React.createRef();
+  mMidAnimation = {};
+
   componentDidMount() {
 
     let midContainer = document.getElementById('m-mid-animation-container');
 
-    let mMidAnimation= window.lottie.loadAnimation({
+    this.mMidAnimation = window.lottie.loadAnimation({
       name: 'MMidAnimation',
       container: midContainer,
       renderer: 'svg',
@@ -17,7 +21,11 @@ export default class MMidAnimation extends Component {
       animationData: mid
     });
 
+    const { mMidAnimation } = this;
+
     document.getElementById('content').addEventListener('scroll', () => {
+      
+      if ( !this.containerRef.current ) return;
       
       if( this.containerRef.current.getBoundingClientRect().left >= 0 && this.containerRef.current.getBoundingClientRect().left <= 10 ){
         mMidAnimation.playSegments([120, 350], true);
@@ -36,7 +44,23 @@ export default class MMidAnimation extends Component {
     });
   }
 
-  containerRef = React.createRef();
+  componentWillUnmount() {
+    let midContainer = document.getElementById('m-mid-animation-container');
+
+    const { mMidAnimation } = this;
+
+    document.getElementById('content').removeEventListener('scroll', () => {
+
+      if( this.containerRef.current.getBoundingClientRect().left >= 0 && this.containerRef.current.getBoundingClientRect().left <= 10 ){
+        mMidAnimation.playSegments([120, 350], true);
+      }
+
+    },
+    {
+     capture: true,
+     passive: true
+    });
+  }
 
   render (){
     return(

@@ -1,5 +1,5 @@
 header{
-  max-width: get-vh(940.5px);
+  max-width: max-content;
   height: get-vh(70px);
   top: 0;
   left: 0;
@@ -98,12 +98,14 @@ nav::before{
 }
 
 .nav-links{
-  width: get-vh(396px);
+  width: max-content;
   height: min-content;
 
   position: relative;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  grid-column-gap: get-vh(10px);
 
   list-style: none;
   padding-left: get-vh(24px);

@@ -40,9 +40,57 @@
   line-height: get-vw(20px);
 }
 
+@mixin vh-proxima-31{
+  font-family: 'Proxima Nova';
+  font-weight: normal;
+  font-size: get-vh(31px);
+  line-height: get-vh(31px);
+}
+
 @mixin vh-proxima-16{
   font-family: 'Proxima Nova';
   font-weight: normal;
   font-size: get-vh(16px);
   line-height: get-vh(20px);
 }
+
+@mixin comforta-bold( $fontSize, $lineHeight: $fontSize, $spacing: unset ) {
+  font-family: 'Comfortaa';
+  font-weight: bold;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  letter-spacing: $spacing;
+}
+
+@mixin comforta-medium( $fontSize, $lineHeight: $fontSize, $spacing: unset ) {
+  font-family: 'Comfortaa';
+  font-weight: 500;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  letter-spacing: $spacing;
+}
+
+@mixin comforta-light( $fontSize, $lineHeight: $fontSize, $spacing: unset ) {
+  font-family: 'Comfortaa';
+  font-weight: 300;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  letter-spacing: $spacing;
+}
+
+@mixin proxima-bold( $fontSize, $lineHeight: $fontSize, $spacing: unset ) {
+  font-family: 'Proxima Nova';
+  font-weight: bold;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  letter-spacing: $spacing;
+}
+
+@mixin proxima-regular( $fontSize, $lineHeight: $fontSize, $spacing: unset ) {
+  font-family: 'Proxima Nova';
+  font-weight: normal;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  letter-spacing: $spacing;
+}
+

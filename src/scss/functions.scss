@@ -18,3 +18,16 @@ $vh-viewport-m: 650;
   @return calc(var(--vh) * #{$size / $vh-context});
   @return $size;
 }
+
+@function m-get-vh($size){
+  $vh-context: $vh-viewport-m * 0.01 * 1px;
+  @return calc(var(--vh) * #{$size / $vh-context});
+  @return $size;
+}
+
+$vw-viewport-m: 375;
+@function m-get-vw($size){
+  $vw-context: $vw-viewport-m * 0.01 * 1px;
+  @return $size / $vw-context * 1vw;
+  @return $size;
+}

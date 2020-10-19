@@ -1,0 +1,69 @@
+@media screen and (max-width: 1024px) {
+    #new-modal {
+        width: 100vw;
+        height: m-get-vh(650px);
+        left: 0; top: 0;
+        position: fixed;
+
+        background-color: rgba(#131317, .85);
+        overflow: hidden auto;
+        z-index: 10;
+    }
+
+    .new-modal-header {
+        width: 100%;
+        height: m-get-vw(44px);
+        padding-left: m-get-vw(12px);
+        padding-top: m-get-vw(12px);
+        top: 0;
+
+        position: sticky;
+
+        background-color: #131317;
+        border-radius: m-get-vw(20px);
+        z-index: 11;
+
+        &:after {
+            height: m-get-vw(1px);
+            left: m-get-vw(12px);
+            right: m-get-vw(12px);
+            bottom: 0;
+
+            position: absolute;
+
+            background-color: var(--borderColor, white);
+            content: '';
+        }
+
+        color: var(--borderColor, white);
+    }
+
+    #new-modal-close {
+        width: m-get-vw(14px);
+        height: m-get-vw(14px);
+        right: m-get-vw(16px);
+        top: m-get-vw(16px);
+
+        position: absolute;
+
+        mask-image: url('~images/close.svg');
+        mask-size: contain;
+        mask-position: center;
+        background-color: var(--borderColor, white);
+
+        z-index: 11;
+        cursor: pointer;
+    }
+
+    .new-modal-content {
+        left: 0; right: 0;
+        top: 0; bottom: 0;
+        min-height: calc( 100% - #{m-get-vw(30px * 2)} );
+        height: max-content;
+        margin: m-get-vw(30px);
+
+        background-color: #131317;
+        border: m-get-vw(1px) var(--borderColor, white) solid;
+        border-radius: m-get-vw(20px);
+    }
+}

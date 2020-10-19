@@ -64,8 +64,8 @@ section#service{
 
 .service--text-service
 h2,
-.service--text-team
-h2{
+.service--text-team h2{
+  &:nth-child(1) { letter-spacing: get-vh(-.6px); }
   margin-bottom: get-vh(12px);
   text-align: center;
 }
@@ -196,7 +196,7 @@ span.notice{
   opacity: 0;
 }
 
-.slider{
+.switch-button{
   position: absolute;
   top:0; bottom:0; margin: auto;
   left: get-vh(-6px);
@@ -205,12 +205,13 @@ span.notice{
   background-color: #E79062;
   border-radius: 50%;
   transition: 0.3s;
+  cursor: pointer;
 }
 
-h2.selected ~ .switch .slider{
+h2.selected ~ .switch .switch-button{
     background-color: #F39541!important;
 }
 
-.switch input:checked + .slider{
+.switch input:checked + .switch-button{
   transform: translateX(get-vh(26px));
 }

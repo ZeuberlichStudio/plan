@@ -60,16 +60,22 @@ button{
 
   .agreement{
     padding-left: get-vh(53px);
+    padding-bottom: get-vh(10px);
     position: relative;
 
-    .error {
+    & > span:last-child {
+      height: max-content;
       white-space: nowrap;
-      top: 0;
-      transform: translateY(-100%);
+      top: 0; bottom: 0;
+      left: get-vh(60px);
       position: absolute;
-      display: block;
+      margin: auto;
+    }
+
+    .error {
       color: #DF461D;
-      @include vh-proxima-16;
+      @include vh-proxima-31;
+      line-height: 0px;
     }
 
     input{

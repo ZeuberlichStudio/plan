@@ -119,6 +119,9 @@ export default class Header extends Component{
           <ul className="nav-links">
             <li className="nav-item"><Link to="/" onClick={ e => this.navClickHandler(e, 0.75) } data-anchor="about-anchor">мы</Link></li>
             <li className="nav-item"><Link to="/" onClick={ e => this.navClickHandler(e, 0.75) } data-anchor="service">сервисы</Link></li>
+            <li className="nav-item">
+              <Link to="/" onClick={ e => this.navClickHandler(e, 0.75) } data-anchor="special-projects">cпецпроекты</Link>
+            </li>
             <li className="nav-item"><Link to="/" onClick={ e => this.navClickHandler(e, 0.75) } data-anchor="cases">кейсы</Link></li>
             <li className="nav-item"><Link to="/" onClick={ e => this.navClickHandler(e, 0.75) } data-anchor="contacts">контакты</Link></li>
           </ul>

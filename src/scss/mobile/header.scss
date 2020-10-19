@@ -102,7 +102,7 @@ header .nav-links{
 
   display: grid;
   grid-auto-flow: row;
-  grid-template-rows: repeat(4, get-vh-m(28px));
+  grid-auto-rows: get-vh-m(28px);
   grid-row-gap: get-vh-m(12px);
   justify-items: flex-end;
 }
@@ -168,6 +168,10 @@ header .nav-links{
 }
 
 .nav-item:nth-child(4) a::after{
+  mask: url('~images/mobile/masks/cases_icon.svg');
+}
+
+.nav-item:nth-child(5) a::after{
   mask: url('~images/mobile/masks/contacts_icon.svg');
 }
 
@@ -203,13 +207,20 @@ header .nav-links{
 }
 
 .nav-item:nth-child(3)::before{
-  mask: url('~images/mobile/masks/cases_border.svg');
+  mask: url('~images/mobile/masks/special_projects_border.svg');
   mask-size: auto get-vh-m(28px);
   mask-position: left center;
   mask-repeat: no-repeat;
 }
 
 .nav-item:nth-child(4)::before{
+  mask: url('~images/mobile/masks/cases_border.svg');
+  mask-size: auto get-vh-m(28px);
+  mask-position: left center;
+  mask-repeat: no-repeat;
+}
+
+.nav-item:nth-child(5)::before{
   mask: url('~images/mobile/masks/contacts_border.svg');
   mask-size: auto get-vh-m(28px);
   mask-position: left center;

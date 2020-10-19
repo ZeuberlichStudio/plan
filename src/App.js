@@ -16,6 +16,10 @@ import Cases from './components/cases.component';
 import Contacts from './components/contacts.component';
 import Modal from './components/modal.component';
 import Partners from './components/partners.component';
+import SpecialProjects from './pages/special-projects';
+
+import NewModal from './features/modal';
+import FoundersPage from './pages/founders/founders';
 
 class App extends Component {
 
@@ -25,8 +29,8 @@ class App extends Component {
     window.addEventListener('resize', () => {
       /*render animation?*/
       clientWidth = document.documentElement.clientWidth;
-      if( clientWidth > 1024 ) this.setState({ animation: true })
-      else this.setState({ animation: false })
+      if( clientWidth > 1024 ) this.setState({ animation: true, isMobile: false })
+      else this.setState({ animation: false, isMobile: true })
       /*set vh*/
       let vh = document.documentElement.clientHeight * 0.01;
       document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -37,6 +41,7 @@ class App extends Component {
   
   state = {
     animation: false,
+    isMobile: false,
     platform: this.Platform
   }
 
@@ -80,10 +85,18 @@ class App extends Component {
             <About />
             <Service />
             { !this.state.animation && <Fragment><div id="service-add-0"></div><div id="service-add-1"></div></Fragment> }
+            <SpecialProjects/>
             <Cases />
             { !this.state.animation && <Fragment><div id="cases-add-0"></div><div id="cases-add-1"></div></Fragment> }
             <Contacts {...this.props} isMobile={!this.state.animation}/>
+            
             <Route path="/posts" render={ props => <Modal {...props}/> } />
+
+            <Route path="/founders">
+              <NewModal borderColor="#E4716D" headerContent={ <h1>Об основателе</h1> }>
+                <FoundersPage isMobile={ this.state.isMobile }/> 
+              </NewModal>
+            </Route>
         </main>
         <Partners/>
       </div>

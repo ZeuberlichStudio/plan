@@ -1,0 +1,91 @@
+@media screen and (max-width: 1024px) {
+    .founders {
+        //display: flex;
+        justify-content: space-between;
+    }
+
+    h1 {
+        @include comforta-medium( m-get-vw(20px) );
+    }
+
+    .founders_illustration {
+        flex-shrink: 0;
+
+        width: 100%;
+        height: max-content;
+        padding: m-get-vw(18px) m-get-vw(8px);
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .founders_text {
+        padding: 0 m-get-vw(12px);
+
+        br.mobile-hide { display: none; }
+
+        h1 {
+            display: none;
+            @include comforta-bold( get-vw(38px), get-vw(42px) );
+            color: $gray;
+        }
+
+        h2 {
+            @include comforta-medium( m-get-vw(30px), m-get-vw(34px) );
+            color: $pink;
+
+            span {
+                display: block;
+                @include proxima-bold( m-get-vw(14px) );
+                color: $gray;
+            }
+        }
+
+        &_group {
+            margin-top: m-get-vw(26px);
+
+            h3 {
+                display: block;
+                @include comforta-bold( m-get-vw(20px) );
+                color: $pink;
+            }
+
+            ul {
+                margin-top: m-get-vw(8px);
+
+                display: grid;
+                grid-auto-rows: max-content;
+                grid-template-columns: 1fr;
+                grid-row-gap: m-get-vw(8px);
+            }
+
+            li {
+                @include proxima-regular( m-get-vw(12px), m-get-vw(14px), m-get-vw(-.4px) );
+                color: white;
+
+                span{ 
+                    display: block;
+                    color: $gray; 
+                }
+            }
+        }
+    }
+
+    .founders_clients {
+        padding: m-get-vw(16px) m-get-vw(12px);
+        margin-top: m-get-vw(10px);
+
+        h2 {
+            display: block;
+            @include comforta-bold( m-get-vw(20px) );
+            color: $pink;
+        }
+
+        img {
+            width: m-get-vw(268px);
+            margin-top: m-get-vw(16px);
+        }
+    }
+}

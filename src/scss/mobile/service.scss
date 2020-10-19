@@ -164,7 +164,7 @@ span.notice{
   opacity: 0;
 }
 
-.slider{
+.switch-button{
   position: absolute;
   top:0; bottom:0; margin: auto;
   left: get-vh-m(-1.5px);
@@ -173,9 +173,10 @@ span.notice{
   background-color: #EB606B;
   border-radius: 50%;
   transition: 0.3s;
+  cursor: pointer;
 }
 
-.switch input:checked + .slider{
+.switch input:checked + .switch-button{
   transform: translateX(get-vh-m(18px));
 }
 

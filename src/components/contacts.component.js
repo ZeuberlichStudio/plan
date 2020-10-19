@@ -21,7 +21,7 @@ class Form extends Component{
     const {name, value} = e.currentTarget;
 
     if ( name === 'phone') {
-      /^[0-9]+$/.test(value) && this.setState({ [name]: value });
+      (/^[0-9-–+ ())]*$/.test(value) || !value) && this.setState({ [name]: value });
     }
     else {
       
@@ -48,7 +48,6 @@ class Form extends Component{
     if( name && brand && mail && phone && agreement ){
 
       if ( !isEmail(mail) ) return this.setState({error: 'invalid email'});
-      else if ( !isMobilePhone(phone) ) return this.setState({error: 'invalid phone'});
 
       let xhr = new XMLHttpRequest();
 
@@ -125,11 +124,14 @@ class Form extends Component{
           <textarea onChange={ this.handleChange } name="comment" placeholder="Ваши планы" value={ comment }
            className="comfortaa-20 dark"></textarea>
           <label className="agreement proxima-16 dark">
-            <span className="error">{ !agreement && error === 'empty fields' && 'Необходимо согласие' }</span>
             <input name="agreement" onChange={ this.handleChange } type="checkbox"/>
             <span className="checkmark"></span>
-            Я согласен(а) на обработку
-            <Link to="/user-agreement" className="white"> персональных данных</Link>
+            <span>
+              Я соглашаюсь с <br/>
+              <Link to="/user-agreement" className="white"> политикой конфиденциальности</Link><br/>
+              и на обработку персональных данных
+              <span className="error">{ !agreement && error === 'empty fields' && '*' }</span>
+            </span>
           </label>
           <button onClick={ this.submitForm } className="comfortaa-20 dark">
             Отправить

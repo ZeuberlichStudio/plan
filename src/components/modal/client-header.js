@@ -1,17 +1,24 @@
 import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import lottie from 'lottie-web'
 
 const ModalHeader = ({posts}) => {
 
+  const { client: clientId } = useParams();
+  const [client, setClient] = React.useState(null);
+
   useEffect(() => {
-    loadAnimation();
-  }, []);
+    if ( !client ) {
+      const clientObj = posts[0].client.find( client => client._id === clientId );
+      setClient( clientObj );
+    }
+
+    client && loadAnimation();
+  }, [client]);
 
   function loadAnimation() {
     const container = document.getElementById('modal_header_animation');
-    const path = posts[0].client[0].illustration ?
-    posts[0].client[0].illustration : null;
+    const path = client.illustration && client.illustration;
 
     const anim = path ?
     lottie.loadAnimation({
@@ -54,7 +61,7 @@ const ModalHeader = ({posts}) => {
       }
 
       //changes content layout
-      if( scrolled > length && !header.classList.contains('minified')){
+      if( scrolled > length && posts.length > 1 && !header.classList.contains('minified')){
         header.classList.add('fade-out');
         setTimeout( () => {
           header.classList.add('minified');
@@ -74,10 +81,11 @@ const ModalHeader = ({posts}) => {
     <div id="modal_header" className="modal_header">
       <div id="modal_header_animation" className="modal_header_animation"></div>
       <div className="modal_header_content">
-        <h2>{ posts[0].client[0].name }</h2>
-        <h3>{ posts[0].client[0].slogan }</h3>
+        {/* <h2>{ posts[0].client[0].name }</h2> */}
+        <h2>{ client && client.name }</h2>
+        <h3>{ client && client.slogan }</h3>
         <Counter posts={posts}/>
-        <p>{ posts[0].client[0].about }</p>
+        <p>{ client && client.about }</p>
       </div>
       <Link to="/" id="modal_close"></Link>
     </div>
@@ -88,6 +96,8 @@ const Counter = ({posts}) => {
 
   function count() {
     let count = [0,0,0];
+
+    if ( !Array.isArray(posts) ) return count; 
 
     posts.forEach(post => {
       post.cat.forEach(cat => {

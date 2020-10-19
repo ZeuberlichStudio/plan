@@ -1,0 +1,100 @@
+@media screen and (min-width: 1025px) {
+    .founders {
+        min-height: calc( 100vh - #{get-vw(85px * 2)} );
+
+        display: grid;
+        grid-template-areas: 
+        'illustration text'
+        'illustration clients';
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .founders_illustration {
+        grid-area: illustration;
+
+        width: get-vw(790px);
+        height: max-content;
+        padding: get-vw(82px) 0 get-vw(62px) get-vw(72px);
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .founders_text {
+        grid-area: text;
+
+        padding: get-vw(30px) get-vw(130px) get-vw(56px) get-vw(120px);
+
+        br.pc-hide { display: none; }
+
+        h1 {
+            @include comforta-bold( get-vw(38px), get-vw(42px) );
+            color: $gray;
+        }
+
+        h2 {
+            @include comforta-medium( get-vw(75px), get-vw(84px) );
+            color: $pink;
+
+            span {
+                display: block;
+                @include proxima-bold( get-vw(23px) );
+                color: $gray;
+            }
+        }
+
+        &_group {
+            margin-top: get-vw(50px);
+
+            h3 {
+                display: block;
+                @include comforta-bold( get-vw(23px) );
+                color: $pink;
+            }
+
+            ul {
+                margin-top: get-vw(8px);
+
+                display: grid;
+                grid-auto-flow: column;
+                grid-template: max-content / get-vw(345px) 1fr;
+                grid-column-gap: get-vw(35px);
+                align-items: flex-end;
+            }
+
+            li {
+                @include proxima-regular( get-vw(16px), get-vw(23px), get-vw(-.4px) );
+                color: white;
+
+                span{ color: $gray; }
+            }
+        }
+    }
+
+    .founders_clients { 
+        grid-area: clients; 
+
+        padding: 0 get-vw(130px) get-vw(62px) get-vw(120px);
+
+        h2 {
+            display: block;
+            @include comforta-bold( get-vw(23px) );
+            color: $pink;
+        }
+    }
+
+    #founders_clients-slider { 
+        margin-top: get-vw(24px);
+
+        --slideWidth: #{get-vw(638px)};
+        --buttonSize: #{get-vw(40px)};
+        --dotSize: #{get-vw(6px)};
+        
+        //fixing bad old styles
+        border-radius: unset;
+        background-color: unset;
+    }
+}

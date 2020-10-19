@@ -1,0 +1,93 @@
+.slider {
+    width: max-content;
+    height: max-content;
+    position: relative;
+
+    &_prev {
+        width: var(--buttonSize, 40px);
+        height: var(--buttonSize, 40px);;
+        left: calc( var(--buttonSize, 40px) * -1 );
+        top: 0; bottom: 0;
+        margin: auto;
+        position: absolute;
+        z-index: 2;
+
+        mask-image: url('~images/slider_arrow.svg');
+        background-color: var(--uiColor, white);
+        cursor: pointer;
+    }
+
+    &_next {
+        width: 40px;
+        height: 40px;
+        right: calc( var(--buttonSize, 40px) * -1 );
+        top: 0; bottom: 0;
+        margin: auto;
+        position: absolute;
+        z-index: 2;
+        
+        mask-image: url('~images/slider_arrow.svg');
+        transform: scaleX(-1);
+        background-color: var(--uiColor, white);
+        cursor: pointer;
+    }
+}
+
+.slider_slides-wrapper {
+    width: var(--slideWidth, 400px);
+    overflow: hidden;
+}
+
+.slider_slides-container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: var(--slideWidth, 400px);
+    grid-template-rows: max-content;
+    justify-items: center;
+    --touchOffset: 0px;
+
+    transform: translateX(calc( (var(--slide, 0) + 2) * var(--slideWidth, 400px) * -1 + var(--touchOffset, 0) ));
+}
+
+.slide {
+    width: max-content;
+    height: max-content;
+    max-width: var(--slideWidth, 400px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+.slider_indicator {
+    width: max-content;
+    left: 0; right: 0;
+    bottom: -1vw;
+    margin: auto;
+
+    position: absolute;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+
+    grid-column-gap: var(--dotSize, 6px);
+
+    .dot {
+        width: var(--dotSize, 6px);
+        height: var(--dotSize, 6px);
+
+        background-color: var(--uiColor, white);
+        border-radius: 50%;
+        opacity: 0.5;
+        cursor: pointer;
+        transition: .3s;
+    }
+
+    .dot.active { opacity: 1; }
+}
