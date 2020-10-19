@@ -85,15 +85,15 @@ export default class Header extends Component{
         if (isMobile) {
           contentContainer.scrollTo( nextPosition, 0 );
         }else{
-          document.body.scrollTo(nextPosition, 0);
+          document.body.scrollTo( nextPosition, 0 );
         }
           
       }else{
         
         if (isMobile) {
-          contentContainer.scrollTo( nextPosition, 0 );
+          contentContainer.scrollTo( anchorPosition, 0 );
         }else{
-          document.body.scrollTo(nextPosition, 0);
+          document.body.scrollTo( anchorPosition, 0 );
         }
 
         clearInterval(interval);
