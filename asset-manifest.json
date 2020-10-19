@@ -1,25 +1,32 @@
 {
   "files": {
-    "main.css": "/plan/static/css/main.352bb866.chunk.css",
-    "main.js": "/plan/static/js/main.58216083.chunk.js",
-    "main.js.map": "/plan/static/js/main.58216083.chunk.js.map",
+    "main.css": "/plan/static/css/main.81b456f9.chunk.css",
+    "main.js": "/plan/static/js/main.c0d8ba06.chunk.js",
+    "main.js.map": "/plan/static/js/main.c0d8ba06.chunk.js.map",
     "runtime-main.js": "/plan/static/js/runtime-main.34f20e5f.js",
     "runtime-main.js.map": "/plan/static/js/runtime-main.34f20e5f.js.map",
-    "static/js/2.54f26b56.chunk.js": "/plan/static/js/2.54f26b56.chunk.js",
-    "static/js/2.54f26b56.chunk.js.map": "/plan/static/js/2.54f26b56.chunk.js.map",
+    "static/js/2.7b87b923.chunk.js": "/plan/static/js/2.7b87b923.chunk.js",
+    "static/js/2.7b87b923.chunk.js.map": "/plan/static/js/2.7b87b923.chunk.js.map",
     "index.html": "/plan/index.html",
-    "precache-manifest.6f0fa23999006dfbbf05cb197d0520f9.js": "/plan/precache-manifest.6f0fa23999006dfbbf05cb197d0520f9.js",
+    "precache-manifest.1063f05f500529ebe26c0e2d7ac021aa.js": "/plan/precache-manifest.1063f05f500529ebe26c0e2d7ac021aa.js",
     "service-worker.js": "/plan/service-worker.js",
-    "static/css/main.352bb866.chunk.css.map": "/plan/static/css/main.352bb866.chunk.css.map",
-    "static/js/2.54f26b56.chunk.js.LICENSE.txt": "/plan/static/js/2.54f26b56.chunk.js.LICENSE.txt",
+    "static/css/main.81b456f9.chunk.css.map": "/plan/static/css/main.81b456f9.chunk.css.map",
+    "static/js/2.7b87b923.chunk.js.LICENSE.txt": "/plan/static/js/2.7b87b923.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/plan/static/media/wa.ec239128.svg",
+    "static/media/modal.scss": "/plan/static/media/close.8bbed2f3.svg",
+    "static/media/founders_clients_0.svg": "/plan/static/media/founders_clients_0.c4c3997d.svg",
+    "static/media/founders_clients_1.svg": "/plan/static/media/founders_clients_1.2af3bf3f.svg",
+    "static/media/founders_clients_mobile.svg": "/plan/static/media/founders_clients_mobile.64db81b5.svg",
+    "static/media/founders_illustration.svg": "/plan/static/media/founders_illustration.9bcd5541.svg",
     "static/media/mapIcon.svg": "/plan/static/media/mapIcon.47ec6dcb.svg",
-    "static/media/partners.svg": "/plan/static/media/partners.3bab4915.svg"
+    "static/media/partners.svg": "/plan/static/media/partners.3bab4915.svg",
+    "static/media/slider.scss": "/plan/static/media/slider_arrow.4e54965a.svg",
+    "static/media/special_project_kakvkino.svg": "/plan/static/media/special_project_kakvkino.f7993312.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.34f20e5f.js",
-    "static/js/2.54f26b56.chunk.js",
-    "static/css/main.352bb866.chunk.css",
-    "static/js/main.58216083.chunk.js"
+    "static/js/2.7b87b923.chunk.js",
+    "static/css/main.81b456f9.chunk.css",
+    "static/js/main.c0d8ba06.chunk.js"
   ]
 }
